@@ -1,1 +1,6 @@
-<pre> ## Expected structure ``` data/ └── data_folder/ ├── images/ # raw images └── annotations/ # COCO-style JSONs ``` </pre>
+## Dataset Structure
+Data/
+└── data_folder/
+├── images/ # raw images
+└── annotations/ # JSON files in COCO format
+
