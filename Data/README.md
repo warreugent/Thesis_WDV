@@ -1,5 +1,1 @@
-Expected structure:
-data/
- └── data folder/
-     ├── images/         # raw images 
-     └── annotations/    # JSON in COCO style
+<pre> ## Expected structure ``` data/ └── data_folder/ ├── images/ # raw images └── annotations/ # COCO-style JSONs ``` </pre>
