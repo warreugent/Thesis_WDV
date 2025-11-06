@@ -1,6 +1,7 @@
-## Dataset Structure
+## Data Structure
+```
 Data/
 └── data_folder/
-├── images/ # raw images
-└── annotations/ # JSON files in COCO format
-
+    ├── images/           # Raw images
+    └── annotations/      # JSON files in COCO format
+```
