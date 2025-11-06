@@ -15,12 +15,10 @@ venv/
 Thumbs.db
 
 # Data
-data/
-*.csv
-*.tar
-*.zip
-*.h5
-*.npy
+data/*
+!data/.gitignore
+!data/README.md
+!data/**/.gitkeep
 
 # Temporary
 tmp/
