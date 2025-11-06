@@ -1,0 +1,9 @@
+name: thesis-env
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pip
+  - pip:
+      - scikit-learn
+      - transformers
