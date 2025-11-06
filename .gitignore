@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+*.log
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/
+*.csv
+*.tar
+*.zip
+*.h5
+*.npy
+
+# Temporary
+tmp/
+cache/
+*.bak
