@@ -3,10 +3,11 @@ dependencies:
   - python=3.11
   - numpy
   - pandas
+  - pytorch
+  - torchvision
   - pip
   - pip:
       - scikit-learn
       - Pillow
       - matplotlib
       - transformers
-      
