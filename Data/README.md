@@ -2,10 +2,11 @@
 ```
 Data/
 └── data_folder/
-    ├── images/           # Raw images
-    |   ├
-    └── annotations/      # JSON files in COCO format
-        ├── instances.json 
+    ├── images/                 # Images split in train and val set
+    |   ├── train/
+    |   └── val/
+    └── annotations/            # JSON train and val files in COCO format
+        <!-- ├── instances.json  -->
         ├── instances_train.json
         └── instances_val.json
 ```
