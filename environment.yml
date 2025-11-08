@@ -6,4 +6,7 @@ dependencies:
   - pip
   - pip:
       - scikit-learn
+      - Pillow
+      - matplotlib
       - transformers
+      
