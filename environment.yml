@@ -1,10 +1,16 @@
 name: thesis-env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
 dependencies:
   - python=3.11
+  - ipykernel
   - numpy
   - pandas
   - pytorch
   - torchvision
+  - certifi
   - pip
   - pip:
       - scikit-learn
