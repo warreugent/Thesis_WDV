@@ -17,3 +17,4 @@ dependencies:
       - Pillow
       - matplotlib
       - transformers
+      - pycocotools
