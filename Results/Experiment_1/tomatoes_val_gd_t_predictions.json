@@ -1,12 +1,15 @@
 {
   "info": {
     "description": "Predictions on ../Data/tomatoes/images/val with gd_t",
-    "date_created": "2025-11-11 23:09:30",
+    "date_created": "2025-11-13 23:38:37",
     "num_images": 10,
     "num_predicted_bbox": 17,
-    "avg_inference_time_s_image": 17.640481490001548,
-    "avg_inference_time_s_bbox": 10.37675381764797,
-    "total_inference_time_s": 176.40481490001548
+    "avg_inference_time_s_image": 22.165956729999742,
+    "avg_inference_time_s_bbox": 13.038798076470437,
+    "total_inference_time_s": 221.65956729999743,
+    "gpu_hours_estimate": 0.055414891824999354,
+    "total_cost_eur": 0.14176976491895668,
+    "cost_per_bbox_eur": 0.008339397936409216
   },
   "images": [
     {
