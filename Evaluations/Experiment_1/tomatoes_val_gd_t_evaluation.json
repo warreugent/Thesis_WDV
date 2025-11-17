@@ -1,6 +1,6 @@
 {
   "info": {
-    "timestamp": "2025-11-17 23:27:50",
+    "timestamp": "2025-11-17 23:36:52",
     "dataset_name": "tomatoes",
     "subset_name": "val",
     "model_name": "gd_t",
@@ -28,6 +28,7 @@
     "precision@0.50": 1.0,
     "recall@0.50": 0.25,
     "total_annotation_time_s": 739.3095672999974,
-    "annotation_time_per_bbox_s": 10.87219951911761
+    "annotation_time_per_bbox_s": 10.87219951911761,
+    "cost_per_bbox_eur": 0.008339397936409216
   }
 }
