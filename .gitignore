@@ -14,11 +14,17 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data
-data/*
-!data/.gitignore
-!data/README.md
-!data/**/.gitkeep
+# --- Data section ---
+
+# Ignore image files anywhere under Data/
+Data/**/*.[Jj][Pp][Gg]
+Data/**/*.[Jj][Pp][Ee][Gg]
+Data/**/*.[Pp][Nn][Gg]
+Data/**/*.[Ww][Ee][Bb][Pp]
+Data/**/*.[Tt][Ii][Ff]
+Data/**/*.[Tt][Ii][Ff][Ff]
+Data/**/*.[Bb][Mm][Pp]
+
 
 # Temporary
 tmp/
