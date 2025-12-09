@@ -1,0 +1,39 @@
+{
+  "info": {
+    "description": "Predictions on ../Data/tomatoes/images/val with owlvit_b_32",
+    "date_created": "2025-12-09 16:19:20",
+    "num_images": 4,
+    "num_predicted_bbox": 0,
+    "avg_inference_time_s_image": 0.6396462930024427,
+    "avg_inference_time_s_bbox": 0.0,
+    "total_inference_time_s": 2.5585851720097708,
+    "gpu_hours_estimate": 0.0006396462930024427,
+    "total_cost_eur": 0.0016364284329312493,
+    "cost_per_bbox_eur": 0.0
+  },
+  "images": [
+    {
+      "id": 2786785542,
+      "file_name": "images/val/2024_01_17__12_08_00_939000000___04Z49__04T2Y_bunch_0.png"
+    },
+    {
+      "id": 2132219833,
+      "file_name": "images/val/2025_02_26__14_23_25_756000000___camera_0__camera_1_bunch_1.png"
+    },
+    {
+      "id": 1090931023,
+      "file_name": "images/val/2023_11_22__15_08_56_259000000___04ZXJ__04ZXK_bunch_8.png"
+    },
+    {
+      "id": 2946530191,
+      "file_name": "images/val/2025_02_26__14_26_13_708000000___camera_0__camera_1_bunch_2.png"
+    }
+  ],
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "tomato"
+    }
+  ]
+}

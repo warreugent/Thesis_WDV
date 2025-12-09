@@ -1,6 +1,6 @@
 {
   "info": {
-    "timestamp": "2025-12-09 12:12:12",
+    "timestamp": "2025-12-09 13:18:50",
     "dataset_name": "tomatoes",
     "subset_name": "val",
     "model_name": "gd_t",
@@ -27,8 +27,8 @@
     "bbox_removals": 24,
     "precision@0.50": 0.5384615384615384,
     "recall@0.50": 0.875,
-    "total_annotation_time_s": 223.7018345419987,
-    "annotation_time_per_bbox_s": 6.990682329437459,
-    "cost_per_bbox_eur": 0.0007170938783811538
+    "total_annotation_time_s": 225.5865073890076,
+    "annotation_time_per_bbox_s": 7.049578355906488,
+    "cost_per_bbox_eur": 0.0007402747503375535
   }
 }
