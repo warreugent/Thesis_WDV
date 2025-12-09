@@ -1,0 +1,34 @@
+{
+  "info": {
+    "timestamp": "2025-12-09 16:55:53",
+    "dataset_name": "tomatoes",
+    "subset_name": "val",
+    "model_name": "owlvit_b_32",
+    "iou_type": "bbox",
+    "num_predicted_bbox": 14,
+    "num_gt_bbox": 32,
+    "num_eval_images": 4,
+    "num_eval_categories": 1
+  },
+  "metrics": {
+    "AP@[.50:.95]": 0.25094232500173097,
+    "AP@0.50": 0.3248632555563249,
+    "AP@0.75": 0.29972997299729975,
+    "AP_small": 0.0,
+    "AP_medium": 0.3222585335456623,
+    "AP_large": -1.0,
+    "AR@1": 0.08125,
+    "AR@10": 0.271875,
+    "AR@100": 0.271875,
+    "AR_small": 0.0,
+    "AR_medium": 0.34800000000000003,
+    "AR_large": -1.0,
+    "bbox_additions": 21,
+    "bbox_removals": 3,
+    "precision@0.50": 0.7857142857142857,
+    "recall@0.50": 0.34375,
+    "total_annotation_time_s": 231.83766655701038,
+    "annotation_time_per_bbox_s": 7.244927079906574,
+    "cost_per_bbox_eur": 0.0001410585763396111
+  }
+}
