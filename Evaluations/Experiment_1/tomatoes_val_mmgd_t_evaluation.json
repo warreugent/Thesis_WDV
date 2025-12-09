@@ -1,6 +1,6 @@
 {
   "info": {
-    "timestamp": "2025-12-09 16:55:53",
+    "timestamp": "2025-12-09 21:00:36",
     "dataset_name": "tomatoes",
     "subset_name": "val",
     "model_name": "mmgd_t",
