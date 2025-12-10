@@ -13,6 +13,7 @@ dependencies:
   - certifi
   - pip
   - pip:
+      - -e ..
       - scikit-learn
       - Pillow
       - matplotlib
