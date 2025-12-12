@@ -1,22 +1,36 @@
-name: thesis-env
+name: main-env
 channels:
   - pytorch
   - conda-forge
   - defaults
+
 dependencies:
   - python=3.11
+  - pip
   - ipykernel
+
+  # core
   - numpy
   - pandas
-  - pytorch >=2.6
+  - matplotlib
+  - scikit-learn
+
+  # pytorch
+  - pytorch>=2.6
   - torchvision
+
+  # COCO + imaging
+  - pycocotools
+  - pillow
+
+  - opencv
+  - libgl
+  - glib
+
   - certifi
-  - pip
+
   - pip:
       - -e ..
-      - scikit-learn
-      - Pillow
-      - matplotlib
       - transformers
-      - pycocotools
       - iterative-stratification
+      - ultralytics
