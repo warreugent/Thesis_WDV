@@ -25,6 +25,18 @@ Data/**/*.[Tt][Ii][Ff]
 Data/**/*.[Tt][Ii][Ff][Ff]
 Data/**/*.[Bb][Mm][Pp]
 
+# Ignore image files anywhere under Timing Experiments/
+Timing\ Experiments/**/*.[Jj][Pp][Gg]
+Timing\ Experiments/**/*.[Jj][Pp][Ee][Gg]
+Timing\ Experiments/**/*.[Pp][Nn][Gg]
+Timing\ Experiments/**/*.[Ww][Ee][Bb][Pp]
+Timing\ Experiments/**/*.[Tt][Ii][Ff]
+Timing\ Experiments/**/*.[Tt][Ii][Ff][Ff]
+Timing\ Experiments/**/*.[Bb][Mm][Pp]
+
+
+# Ignore zip archives
+*.zip
 
 # Temporary
 tmp/
