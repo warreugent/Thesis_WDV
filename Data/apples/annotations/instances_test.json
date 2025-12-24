@@ -1,0 +1,4744 @@
+{
+  "info": {
+    "description": "COCO export dataset",
+    "version": "1.0",
+    "year": 2024,
+    "contributor": "Robovision",
+    "date_created": "2024/07/02"
+  },
+  "licenses": [],
+  "categories": [
+    {
+      "supercategory": "",
+      "name": "GoodApple",
+      "id": 0
+    },
+    {
+      "supercategory": "",
+      "name": "BadApple",
+      "id": 1
+    }
+  ],
+  "images": [
+    {
+      "file_name": "../images/test/IMG_0335.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 2
+    },
+    {
+      "file_name": "../images/test/IMG_0394.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 7
+    },
+    {
+      "file_name": "../images/test/IMG_0405.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 8
+    },
+    {
+      "file_name": "../images/test/IMG_0337.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 17
+    },
+    {
+      "file_name": "../images/test/IMG_0362.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 37
+    },
+    {
+      "file_name": "../images/test/IMG_0419.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 38
+    },
+    {
+      "file_name": "../images/test/IMG_0412.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 46
+    },
+    {
+      "file_name": "../images/test/IMG_0416.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 52
+    },
+    {
+      "file_name": "../images/test/IMG_0386.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 57
+    },
+    {
+      "file_name": "../images/test/IMG_0326.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 59
+    },
+    {
+      "file_name": "../images/test/IMG_0429.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 61
+    },
+    {
+      "file_name": "../images/test/IMG_0402.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 63
+    },
+    {
+      "file_name": "../images/test/IMG_0365.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 70
+    },
+    {
+      "file_name": "../images/test/IMG_0397.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 71
+    },
+    {
+      "file_name": "../images/test/IMG_0432.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 74
+    },
+    {
+      "file_name": "../images/test/IMG_0388.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 79
+    },
+    {
+      "file_name": "../images/test/IMG_0439.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 88
+    },
+    {
+      "file_name": "../images/test/IMG_0307.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 90
+    },
+    {
+      "file_name": "../images/test/IMG_0393.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 92
+    },
+    {
+      "file_name": "../images/test/IMG_0436.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 99
+    },
+    {
+      "file_name": "../images/test/IMG_0298.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 103
+    },
+    {
+      "file_name": "../images/test/IMG_0364.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 116
+    },
+    {
+      "file_name": "../images/test/IMG_0399.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 119
+    },
+    {
+      "file_name": "../images/test/IMG_0372.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 123
+    },
+    {
+      "file_name": "../images/test/IMG_0302.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 129
+    },
+    {
+      "file_name": "../images/test/IMG_0379.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 132
+    },
+    {
+      "file_name": "../images/test/IMG_0359.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 136
+    },
+    {
+      "file_name": "../images/test/IMG_0371.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 137
+    },
+    {
+      "file_name": "../images/test/IMG_0360.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 141
+    },
+    {
+      "file_name": "../images/test/IMG_0345.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 145
+    },
+    {
+      "file_name": "../images/test/IMG_0437.png",
+      "height": 1574,
+      "width": 1959,
+      "id": 151
+    }
+  ],
+  "annotations": [
+    {
+      "image_id": 2,
+      "bbox": [
+        914,
+        0,
+        251.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "3a1b47a6-f1b6-4ed0-9b56-c38e4185ef7e"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1075,
+        251,
+        246.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "fce89b8f-6d2c-46cc-b926-66008c3e40e6"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1396,
+        12,
+        254.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "c818e153-b311-4282-8464-66a4a8ee18c8"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        466,
+        0,
+        231.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "fbe99b69-77f2-4628-ba41-fe7f9b985bc5"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1408,
+        1111,
+        281.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "2e6573ae-6d27-4db6-a98f-c7cc10f5eef8"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1110,
+        955,
+        264.0,
+        271.0
+      ],
+      "category_id": 0,
+      "id": "d5794fb0-55bc-4c8c-8d97-62f2f476d13c"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        926,
+        1226,
+        261.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "9aacc42c-a261-489a-bfb2-f642ca332a47"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1165,
+        0,
+        253.0,
+        244.0
+      ],
+      "category_id": 0,
+      "id": "57a10677-94a6-46a5-bdb8-2bd83bd53a03"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1349,
+        828,
+        281.0,
+        283.0
+      ],
+      "category_id": 0,
+      "id": "c288bf7c-8059-4273-9d20-08a962382c3c"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        364,
+        537,
+        244.0,
+        234.0
+      ],
+      "category_id": 0,
+      "id": "329e4d1e-37b0-4b15-96c9-37429c3e5489"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        1205,
+        1223,
+        251.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "fb1acb55-f890-406f-9e64-9ef775b7c428"
+    },
+    {
+      "image_id": 2,
+      "bbox": [
+        662,
+        224,
+        254.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "32ae3e6d-9080-4d04-bbe1-a797d4d7dd62"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        726,
+        199,
+        257.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "6f877f30-ca04-4940-a9c4-817675162a59"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1356,
+        1253,
+        250.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "350477cd-3e03-40ff-8808-1b569509fdba"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1645,
+        0,
+        265.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "b25f70b1-7048-4340-ab5a-9243a30b4e43"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1008,
+        221,
+        262.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "0409eba6-96ab-4cf8-96a4-e26449bf804e"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        515,
+        311,
+        250.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "e1d4bb78-c9ac-4075-8cea-dd6d152e17ec"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        696,
+        910,
+        255.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "33d616f9-fdac-4f26-8e5f-88c751806374"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        944,
+        1241,
+        174.0,
+        166.0
+      ],
+      "category_id": 1,
+      "id": "aa6437e6-edfd-4abd-915e-1df248e2d131"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        919,
+        481,
+        265.0,
+        232.0
+      ],
+      "category_id": 0,
+      "id": "a3e579c8-be81-4e7b-9a02-9f1442d8d525"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1165,
+        1057,
+        262.0,
+        274.0
+      ],
+      "category_id": 0,
+      "id": "264fbedd-8c64-4a32-a4e6-09e266fb602a"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1581,
+        1140,
+        307.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "1fadf4ab-1a10-4c0d-a829-3de6c7ff0cc5"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        954,
+        888,
+        260.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "1db6ed59-050d-40c8-b5fb-bc81924dfb07"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        694,
+        566,
+        247.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "7a1b6fae-dd36-4efc-a209-3924865dc5a4"
+    },
+    {
+      "image_id": 7,
+      "bbox": [
+        1356,
+        934,
+        272.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "0fac9bd7-ad07-4823-8747-dd8a9a527970"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        495,
+        66,
+        263.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "172fda7d-0442-423b-a77e-eb8920882e1b"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1010,
+        93,
+        236.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "bf3ae023-868c-4877-853e-0dcbfafc13ba"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1348,
+        1236,
+        270.0,
+        237.0
+      ],
+      "category_id": 0,
+      "id": "344cd2df-94dc-4fc4-bbf0-cc0155efa492"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1616,
+        1223,
+        260.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "026ea529-9b3b-4919-bbf2-ad3dcfe84882"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        294,
+        500,
+        226.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "1aaca1e4-b04b-4359-b362-2f5d258ca0b2"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        772,
+        27,
+        243.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "6c83335f-995b-4d33-9114-7ec8ce8a49bf"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1236,
+        7,
+        242.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "21585bd2-6944-4574-820b-5e94301aea7e"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1451,
+        5,
+        263.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "0c0e0e9d-bf2f-4109-bc20-953fc56bf01a"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        812,
+        1245,
+        262.0,
+        278.0
+      ],
+      "category_id": 0,
+      "id": "e2dd1c78-4034-4fd6-a2e8-a54a9175d5a2"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1694,
+        0,
+        243.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "d141ee70-1ba5-4ae7-a76a-e809e34755c6"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        667,
+        233,
+        262.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "2c475928-acbf-459b-84f5-23a147e4640a"
+    },
+    {
+      "image_id": 8,
+      "bbox": [
+        1079,
+        1265,
+        245.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "a92f1326-db2e-46ac-b5a6-9a948d895058"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1177,
+        261,
+        244.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "52d7d45f-6667-4a1f-8b86-ede2eb61a144"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1587,
+        1233,
+        291.0,
+        279.0
+      ],
+      "category_id": 0,
+      "id": "c56aba5c-b8fe-4c87-9f54-8e8a5044cca7"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1016,
+        679,
+        253.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "567ffc78-5ba6-4806-95f4-a6128a82f02f"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        804,
+        517,
+        239.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "2c8019b5-54b4-414e-8332-b1a81cb22395"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1314,
+        816,
+        261.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "46685c7b-50f8-470d-8336-941beb95ae47"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        929,
+        286,
+        248.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "e2c7c197-6777-4d7f-bae7-b88283343400"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1344,
+        559,
+        258.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "a29303c1-a06e-4f01-8e67-8e74ceff890d"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        727,
+        132,
+        256.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "4e693964-4c68-4efb-ba1e-73df85892c57"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        317,
+        1044,
+        236.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "68e9f07f-9b9b-4eab-8d6c-05f5b13195cb"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        909,
+        915,
+        271.0,
+        266.0
+      ],
+      "category_id": 0,
+      "id": "fdb94a21-6e3d-481b-aa04-5590c171b96b"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        1590,
+        679,
+        249.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "e52f2994-8397-4cc4-be25-56a9ce15a6af"
+    },
+    {
+      "image_id": 17,
+      "bbox": [
+        349,
+        383,
+        251.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "a6e1e3d6-2c2c-43ec-8902-242d9fb74a39"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        570,
+        893,
+        252.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "945858ba-9c43-4df1-9cec-b46eeda5dfd5"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        906,
+        393,
+        239.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "119227dd-7980-4cb9-8fe1-2bb6060f6c11"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        1073,
+        1216,
+        253.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "21668789-d0d9-43c5-a368-dbc30a66f355"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        1292,
+        1062,
+        276.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "b155beb0-7fd5-45a8-a875-bd87abb2dc8a"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        777,
+        1044,
+        224.0,
+        242.0
+      ],
+      "category_id": 0,
+      "id": "28c53d78-b297-4c84-b443-449ac0d7ac86"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        824,
+        1273,
+        254.0,
+        231.0
+      ],
+      "category_id": 0,
+      "id": "947bb016-5575-49ac-b93a-c19e765a0b79"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        270,
+        1261,
+        241.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "31984e15-a7da-496b-8b3a-354d0240efb9"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        367,
+        425,
+        238.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "b8ebcf12-db28-4494-a98a-aa1652e8b4f8"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        548,
+        1223,
+        249.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "85659ffd-745c-4aff-8f8b-692086d813c8"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        662,
+        679,
+        254.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "314b8a70-cb4d-4475-a784-d085bd537c15"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        364,
+        1037,
+        234.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "a9914c60-f484-4047-b363-7622125dd58e"
+    },
+    {
+      "image_id": 37,
+      "bbox": [
+        570,
+        0,
+        244.0,
+        271.0
+      ],
+      "category_id": 0,
+      "id": "132caebd-ef42-4785-b148-dcf5694d1bc5"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1118,
+        596,
+        253.0,
+        230.0
+      ],
+      "category_id": 0,
+      "id": "cbac14f7-4c08-4a74-b981-08c8e1cb5e41"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1013,
+        1268,
+        252.0,
+        242.0
+      ],
+      "category_id": 0,
+      "id": "05663ecb-d021-4cd1-a5fa-c6c9670a51ad"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1223,
+        949,
+        270.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "6bcd8b84-88bc-400b-b13f-430eba337d34"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1027,
+        5,
+        243.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "7b4fd6a6-baa2-4d9a-b175-14b46b82a26b"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1809,
+        549,
+        150.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "b59579de-02ad-40dd-ba95-075363c43c3c"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        772,
+        69,
+        265.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "36dbd843-e97c-4455-b5da-4c30727afbec"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1572,
+        422,
+        277.0,
+        272.0
+      ],
+      "category_id": 0,
+      "id": "fb343696-f99b-467e-920e-2514f475f039"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1525,
+        937,
+        255.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "e0de6f26-279a-4738-a994-c5d4fa6a971b"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1363,
+        15,
+        179.0,
+        137.0
+      ],
+      "category_id": 1,
+      "id": "16da236b-315f-4b17-bdfe-b3599afbbfd6"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        356,
+        174,
+        235.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "c351837e-93d0-47b9-82fe-983dda1e99f3"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1474,
+        186,
+        286.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "1abc5f9d-372a-40bb-b0c9-5332485b8b86"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1223,
+        186,
+        268.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "8a77ce80-7034-4eaf-8481-dbc1fde2bf6c"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        1371,
+        1157,
+        186.0,
+        184.0
+      ],
+      "category_id": 1,
+      "id": "4ada2797-60dd-47c1-8d68-20f22fa735aa"
+    },
+    {
+      "image_id": 38,
+      "bbox": [
+        978,
+        1010,
+        275.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "9099fefe-9852-40c2-9e13-db6342259d62"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1211,
+        1174,
+        265.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "917b708e-f0bf-4b40-8939-212c0cd86cc3"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1579,
+        2,
+        272.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "abdae8e1-1154-4cf2-8f5c-ea0f937b8458"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1471,
+        1270,
+        284.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "b10a7efe-b6cd-4476-90dc-f13dde68b49e"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        257,
+        51,
+        226.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "f9ea82a2-b96d-410a-898c-3edc1d975db1"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1113,
+        326,
+        253.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "70f228d8-4a0d-4cf2-91af-e0c9e49e8bbf"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        831,
+        1321,
+        184.0,
+        179.0
+      ],
+      "category_id": 1,
+      "id": "78af9f75-bf73-43c5-92ce-b935ac2ee686"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        522,
+        34,
+        241.0,
+        236.0
+      ],
+      "category_id": 0,
+      "id": "9a4f0cda-7106-47e7-b757-f37508ab02eb"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1143,
+        66,
+        257.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "4cf6195f-bd2a-43a7-828a-09443a67beea"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        569,
+        1108,
+        243.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "f36a7d0f-a4df-478e-9f7c-7364bcf0669b"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1018,
+        1272,
+        242.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "44fee753-0eae-48a3-b536-07882b5185ff"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        468,
+        270,
+        265.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "e1edd6e3-e2b1-458a-a6f8-d08b90bbc4bb"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        1373,
+        184,
+        267.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "a80acc32-964e-4ac8-987a-8b68982df783"
+    },
+    {
+      "image_id": 46,
+      "bbox": [
+        851,
+        1054,
+        240.0,
+        272.0
+      ],
+      "category_id": 0,
+      "id": "b0dbac28-c0a7-4cdb-b808-ff1b144ddf8e"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        687,
+        17,
+        152.0,
+        174.0
+      ],
+      "category_id": 1,
+      "id": "92a6074f-38f5-4158-97eb-d94627d97e7a"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1434,
+        260,
+        253.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "96583ab5-674d-4400-a0e8-dc3d3627d0ef"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1576,
+        0,
+        253.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "7cb6877c-3eb4-4ea0-853e-7a59b9c90dca"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1255,
+        27,
+        260.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "530c9a8d-c7b4-4f84-bebc-458f98adf513"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        400,
+        324,
+        235.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "26a4bb05-94af-4063-93c5-cd3406542b74"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        932,
+        221,
+        238.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "6b274a56-ea4e-4d55-8e8c-96942b5017ff"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        848,
+        15,
+        241.0,
+        225.0
+      ],
+      "category_id": 0,
+      "id": "85260497-7595-425b-b0d3-eee9ad723cab"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        640,
+        243,
+        255.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "c46744dc-5723-433b-a94e-2c374b7937c1"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        652,
+        1248,
+        253.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "1b28ca25-0952-4beb-b725-5e864699e44f"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1307,
+        468,
+        269.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "23fcc081-af4a-4987-8c00-147da511210b"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1459,
+        637,
+        304.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "04bc9f91-2933-48bd-820c-96f5187808a9"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        713,
+        846,
+        265.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "7f77aace-a420-4b69-819a-488e25018ebf"
+    },
+    {
+      "image_id": 52,
+      "bbox": [
+        1196,
+        275,
+        246.0,
+        223.0
+      ],
+      "category_id": 0,
+      "id": "b97c8c58-4b6f-4d6b-80f1-077d2a89fb37"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1363,
+        1000,
+        275.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "474ae1f6-1d20-4564-a309-4cedd2e5a63f"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1098,
+        267,
+        250.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "fb87114c-ddcf-4701-9e5d-477e7366ebd9"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        189,
+        495,
+        240.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "247bcc38-1328-4f70-a447-5a2fcf5980b9"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1496,
+        1209,
+        259.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "45648454-2a5a-4afc-bd20-6bde3d56aca8"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        848,
+        289,
+        246.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "e89585b7-dc83-47fc-bae1-d9efc7ec65f8"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        991,
+        0,
+        260.0,
+        236.0
+      ],
+      "category_id": 0,
+      "id": "9e7db820-dc2d-4d29-8b07-dfa10a0507e1"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        0,
+        1241,
+        216.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "503c4539-155f-4f61-aed1-22226fe3eeb2"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1508,
+        787,
+        225.0,
+        194.0
+      ],
+      "category_id": 1,
+      "id": "f1cbf02e-a47b-4a6a-a930-92236c441937"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1233,
+        96,
+        258.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "1554fce8-8d9c-4805-b639-bf350a3246be"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1187,
+        1182,
+        272.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "22eb5f8d-1408-470d-a665-7485bfff6e09"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        875,
+        1209,
+        270.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "55707e2c-5f70-4879-955f-99e3655bdc7d"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1422,
+        0,
+        292.0,
+        228.0
+      ],
+      "category_id": 0,
+      "id": "306dbcbc-b588-42ac-b52a-1cd0a7cbeb55"
+    },
+    {
+      "image_id": 57,
+      "bbox": [
+        1221,
+        564,
+        248.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "3924dad5-eb6b-42f9-b7c6-6600e4ba8fdd"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        270,
+        1236,
+        246.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "f39bbf19-b508-4bbd-97c1-8466d2dba543"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        521,
+        1246,
+        246.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "4dc2d8f3-893b-48c4-871a-90fcb14b8b0a"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        1647,
+        1228,
+        279.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "2165efa5-3178-4737-b2e6-d48cae058cdc"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        441,
+        1039,
+        249.0,
+        227.0
+      ],
+      "category_id": 0,
+      "id": "5cde0ead-e869-414f-8bf0-66b16fc4283b"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        66,
+        1139,
+        241.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "dda2a788-a0f9-4bbf-8373-2e7dcc55f83b"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        1222,
+        174,
+        264.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "10c4ab65-2650-45a9-96ac-7d7a054217a1"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        1172,
+        709,
+        264.0,
+        276.0
+      ],
+      "category_id": 0,
+      "id": "0b5404a6-2672-4194-9087-aa7e921fb0c9"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        391,
+        174,
+        237.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "fb181138-d2fd-4320-b94f-c0c8db8cf21b"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        769,
+        1206,
+        261.0,
+        278.0
+      ],
+      "category_id": 0,
+      "id": "0cdc9164-d9b6-46d0-990c-35a4137b2e0c"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        1374,
+        567,
+        266.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "c85b67a5-451f-418e-9ff1-8cfd1df655e7"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        1108,
+        1221,
+        261.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "140eec1b-2689-4db7-90f6-e48dd14f2962"
+    },
+    {
+      "image_id": 59,
+      "bbox": [
+        861,
+        766,
+        239.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "30821b9b-bae6-469d-af83-c314f17ca53d"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1209,
+        478,
+        235.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "0f734376-2b62-49a3-af60-a7fbeedcc2da"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        968,
+        449,
+        236.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "f0fe1b50-e433-4b4f-a18b-631352b7a958"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        689,
+        512,
+        194.0,
+        187.0
+      ],
+      "category_id": 1,
+      "id": "ae090e41-eccd-49fe-bdee-cb24865803d7"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1836,
+        387,
+        123.0,
+        177.0
+      ],
+      "category_id": 1,
+      "id": "2c1d0ed1-9856-4695-a149-11653b8b7e61"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1106,
+        1250,
+        255.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "5d0e8d8e-f030-4918-9ae8-866e18783fa5"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        991,
+        946,
+        264.0,
+        233.0
+      ],
+      "category_id": 0,
+      "id": "b4b3813d-6936-4286-aca6-f1d78514ee77"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        517,
+        169,
+        292.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "d825f6ae-4e9b-4bec-bbdd-0f7c2d3d5be3"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1057,
+        686,
+        274.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "d6acaf73-ea48-4345-bcfe-9aebe6ea501f"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1569,
+        15,
+        287.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "dd835363-8f57-4a72-be5e-4e5d7183c089"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1586,
+        304,
+        275.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "9315100c-cb49-482c-952f-4858fe35f751"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        949,
+        130,
+        270.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "ff0bfaa0-6e5b-46fc-a7bd-92e154cc693f"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        1241,
+        1081,
+        255.0,
+        231.0
+      ],
+      "category_id": 0,
+      "id": "dae39363-edf2-4d09-a36d-7ff13410648e"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        841,
+        1221,
+        277.0,
+        292.0
+      ],
+      "category_id": 0,
+      "id": "84e19cea-81bb-42a6-b46c-bf84002ef870"
+    },
+    {
+      "image_id": 61,
+      "bbox": [
+        557,
+        1270,
+        277.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "25615ad8-bef9-4b99-b501-d1c634f6a836"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        777,
+        0,
+        238.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "67e58223-3cc8-4ce1-bb13-4475400061f2"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1643,
+        1133,
+        289.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "66976ef2-3d5b-4a8e-8c1b-cb80238f5459"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        915,
+        172,
+        274.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "01dac0fa-7acf-4c89-9813-68f2b6db1504"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1601,
+        701,
+        287.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "ddc219c4-7af1-4f00-a004-d342d32e5442"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        333,
+        488,
+        231.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "1a121b1e-d4c7-40d8-bac6-500f205245c2"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        949,
+        1245,
+        267.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "12ee1aa6-56f5-43e7-bd02-83ed1a23f67d"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        520,
+        49,
+        250.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "0940ba4d-48d7-4be6-b93d-c468519f9bda"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1655,
+        0,
+        260.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "70eb79af-f9e6-4efe-ba56-f0a26fb263dd"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1476,
+        978,
+        275.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "f80f11d0-7a67-41ba-9808-b6b3d87da29c"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1417,
+        0,
+        275.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "0640b0db-839b-40ae-9397-73397e778a2e"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1098,
+        338,
+        258.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "b1526dbf-ef22-4a47-bfa5-8ebdb7c5c659"
+    },
+    {
+      "image_id": 63,
+      "bbox": [
+        1155,
+        981,
+        238.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "8bf9484b-6c9e-495c-b0c6-f0a951b79fe7"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        357,
+        990,
+        263.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "6d0fea9c-fa66-4dfc-954d-37f15cca3aa2"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        1065,
+        119,
+        239.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "24e0d030-fc15-44eb-b55c-b8e2ecc5064a"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        1505,
+        423,
+        274.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "4f66ff2a-3b92-463c-a79e-26769ed07f80"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        1284,
+        206,
+        259.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "35799ccb-6128-448d-b51c-ec3e9ee59063"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        720,
+        584,
+        248.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "1480b545-3183-4cc2-bc94-dc4389faf3a5"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        983,
+        1223,
+        249.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "b4d60af0-959e-471b-a470-e25aa4f0f4e0"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        1443,
+        7,
+        259.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "39b2803d-c45f-4a5a-8da3-22719dbb1ea1"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        998,
+        557,
+        266.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "9d97167a-475a-4cd8-9f95-bdb2c1b5f9a1"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        367,
+        177,
+        221.0,
+        203.0
+      ],
+      "category_id": 1,
+      "id": "5b490f24-e156-4852-8bd1-e247cc9ea6c4"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        446,
+        1278,
+        241.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "6d44733c-ff03-4782-a434-2837cdd6c334"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        168,
+        1161,
+        251.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "09f1d937-7df3-4a5d-a856-c830f053961f"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        837,
+        246,
+        251.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "3e957428-3d44-4fa1-b0a7-1352fff2041a"
+    },
+    {
+      "image_id": 70,
+      "bbox": [
+        849,
+        37,
+        231.0,
+        204.0
+      ],
+      "category_id": 0,
+      "id": "ec4ef5fb-bd88-480f-bb45-a035323f50a6"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        1216,
+        1228,
+        250.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "12e2f8b8-f243-4d64-9ced-e5053cfaf664"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        1787,
+        275,
+        172.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "f302a5d0-c5d4-4c11-bd3e-80ff47868395"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        905,
+        105,
+        250.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "36b134c5-b8ef-4ad8-8f64-0383a483d716"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        701,
+        191,
+        240.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "4aeec992-5508-401e-a87d-cdcfe703e8d3"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        510,
+        1216,
+        248.0,
+        284.0
+      ],
+      "category_id": 0,
+      "id": "82315924-426c-4d1d-ae53-3066cbb32a04"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        1165,
+        973,
+        250.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "c4d8ed3f-1d6d-4ac0-9181-e747d118ca11"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        731,
+        1093,
+        269.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "c4993cf7-c91b-4b7b-85f3-ae7821dafd65"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        1407,
+        1030,
+        263.0,
+        282.0
+      ],
+      "category_id": 0,
+      "id": "793c9967-97f9-4e6b-a235-404079ce5ae4"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        603,
+        0,
+        248.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "69f54e26-ea78-40e4-90a2-9842ea27ac90"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        944,
+        944,
+        250.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "979e572b-c739-4923-a381-97467bac1423"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        922,
+        1277,
+        235.0,
+        216.0
+      ],
+      "category_id": 0,
+      "id": "c5975019-4973-4b94-a43a-0c7220d1d784"
+    },
+    {
+      "image_id": 71,
+      "bbox": [
+        1616,
+        0,
+        282.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "4bff1100-8f31-400a-a32e-8e4742712a8f"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        542,
+        1084,
+        238.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "03f8e366-5c79-4162-8489-6e9dc4f87826"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        579,
+        22,
+        247.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "b01c9f17-af35-4e0f-b996-793b7db1abc5"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1152,
+        107,
+        233.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "63035565-9f5d-4fbb-9f28-3ea83dfa76db"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        919,
+        51,
+        255.0,
+        233.0
+      ],
+      "category_id": 0,
+      "id": "be40ee8f-9aba-4946-8b26-799d3918506e"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1410,
+        1206,
+        269.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "6646e3e5-eabf-48b9-91a5-db65a60a2529"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        530,
+        505,
+        269.0,
+        284.0
+      ],
+      "category_id": 0,
+      "id": "a9101fc4-3df0-4dfa-8e70-a376ef1ad4f4"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1603,
+        20,
+        251.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "56b76c51-6e83-4004-8d3d-6cbae222d4b0"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        701,
+        414,
+        189.0,
+        187.0
+      ],
+      "category_id": 1,
+      "id": "cc531183-0598-4599-a7ec-a0c182bbab8c"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        976,
+        282,
+        274.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "44b9b0be-7fc4-4760-a9fa-48932f9b9c54"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1822,
+        402,
+        137.0,
+        172.0
+      ],
+      "category_id": 1,
+      "id": "cf7f8221-38bc-4ebb-a6b4-194524666982"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        861,
+        530,
+        245.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "875324af-c820-4071-b86b-9d72a3e5c0cf"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1155,
+        1270,
+        267.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "37a8da97-c1bd-4d2d-8dff-b461b4b2848c"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        809,
+        1270,
+        248.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "8d3a7336-e207-419d-a58d-8be6d5f16d45"
+    },
+    {
+      "image_id": 74,
+      "bbox": [
+        1358,
+        20,
+        241.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "d7d67236-4bce-4385-97f3-b695687fad4f"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        397,
+        164,
+        263.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "da655e0e-0ab9-4ee4-a04e-616bc2ffe452"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        642,
+        336,
+        246.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "4b14af81-d664-4eeb-8d05-d0f1d8c156d7"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        324,
+        1231,
+        279.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "60a0fe94-5114-4463-9d20-747ea2b59162"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        581,
+        1236,
+        238.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "19c05f9e-153a-4093-a63a-af52ca465eab"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        988,
+        917,
+        243.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "170991f4-7df7-43dd-9902-17d9cd3acc1f"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        939,
+        1214,
+        253.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "d61305e0-cab9-4e37-99fb-1fcb9aa492ea"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        179,
+        527,
+        257.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "cfc239fb-d270-458c-903c-a785420df95d"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        2,
+        1236,
+        233.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "7cd04e6e-11c0-4455-997c-0af4a803bbda"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        1130,
+        792,
+        206.0,
+        206.0
+      ],
+      "category_id": 1,
+      "id": "eb6b42f9-ddf2-42f9-955b-9be131e31560"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        1192,
+        1135,
+        250.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "01c04922-1218-4b16-bc8a-c944b2dd150c"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        456,
+        986,
+        253.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "db28cd7c-6002-4b9e-ae0e-727506e27cb7"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        1351,
+        775,
+        272.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "cde6fab7-1be2-44d6-845d-4495e4905820"
+    },
+    {
+      "image_id": 79,
+      "bbox": [
+        738,
+        1062,
+        265.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "1a64abd0-6484-4774-8cbb-e87d9b26ad2a"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        775,
+        211,
+        223.0,
+        225.0
+      ],
+      "category_id": 0,
+      "id": "806a0322-9efd-43fe-87d1-9ed2da286d44"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        748,
+        444,
+        257.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "f00b8d52-bb59-4757-a742-bd94457033ce"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        843,
+        787,
+        277.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "1eda5699-fe30-41f6-949b-921d42b3b2b4"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1471,
+        260,
+        287.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "b618c802-f6d6-4ecd-8c4e-388a1cd6b782"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1410,
+        15,
+        250.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "ce6d5743-6e3c-4b00-8e6f-1d1e350bbeb2"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        645,
+        1138,
+        267.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "76af542d-be0f-4113-bfc9-1860bd7f0859"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        883,
+        17,
+        247.0,
+        231.0
+      ],
+      "category_id": 0,
+      "id": "c157626a-401c-489a-8869-5509c9bb687e"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1000,
+        221,
+        265.0,
+        237.0
+      ],
+      "category_id": 0,
+      "id": "5d8be3f2-9ed5-4f71-ae34-2d1a1b306a71"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        883,
+        1040,
+        257.0,
+        237.0
+      ],
+      "category_id": 0,
+      "id": "96a1a2f3-8ca8-4ae8-a4bd-9cf169cc2638"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1167,
+        17,
+        250.0,
+        275.0
+      ],
+      "category_id": 0,
+      "id": "1954deaf-19be-494e-8d0b-62e02b0f2867"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1010,
+        449,
+        240.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "cf8909e9-5f07-484d-bf8b-e82d4c8f32c5"
+    },
+    {
+      "image_id": 88,
+      "bbox": [
+        1684,
+        78,
+        248.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "9d77e184-a5d8-41b7-a308-4fda2a060fa9"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        402,
+        164,
+        242.0,
+        244.0
+      ],
+      "category_id": 0,
+      "id": "3ff815b3-f3f7-492c-954d-01cb91791a30"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        667,
+        1277,
+        255.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "e1fb9ca7-6e0a-4db4-a423-b52862f66ab0"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1099,
+        23,
+        273.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "daeafd5b-cd8c-46c9-a48f-4bfb3975b68c"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        836,
+        273,
+        258.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "35e15d26-b04d-45aa-b53a-44e97038477f"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1091,
+        273,
+        242.0,
+        219.0
+      ],
+      "category_id": 0,
+      "id": "284f6489-82bf-4e47-ac4b-09de40815642"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1555,
+        910,
+        187.0,
+        172.0
+      ],
+      "category_id": 1,
+      "id": "006c3177-f25d-40af-a7f6-70ae880cafe9"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1578,
+        0,
+        268.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "efac02cb-da5a-48fe-9799-3ff88344fe69"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        655,
+        398,
+        189.0,
+        184.0
+      ],
+      "category_id": 1,
+      "id": "bf0d6ca7-6281-44d8-b6c1-493ad938476a"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        749,
+        194,
+        135.0,
+        159.0
+      ],
+      "category_id": 1,
+      "id": "bcb3d714-fdba-485f-aaca-72c0411d9194"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1349,
+        356,
+        294.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "daefdc22-2ea1-48d6-b006-8367c31ce468"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        178,
+        475,
+        186.0,
+        194.0
+      ],
+      "category_id": 1,
+      "id": "5c406818-d67a-4448-81ec-02093ffc887b"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1003,
+        460,
+        184.0,
+        159.0
+      ],
+      "category_id": 1,
+      "id": "6a4e4071-097a-4b88-a6e4-84bbd7e40d2d"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1357,
+        114,
+        255.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "b61e6ff2-ef42-4c4e-9c15-0b24261cb4e4"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        912,
+        1254,
+        252.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "81ca696b-4621-4582-bc79-049a05bc0505"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        876,
+        122,
+        164.0,
+        164.0
+      ],
+      "category_id": 1,
+      "id": "6a868cc6-d5e9-4425-bd5a-a7efe1d0c833"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        294,
+        40,
+        199.0,
+        194.0
+      ],
+      "category_id": 1,
+      "id": "1f76bd02-9b07-44f3-9c39-72308fd0d88c"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1151,
+        1236,
+        237.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "0ffa3a7c-7ff7-4989-8574-d8a2872561e0"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        1396,
+        1248,
+        169.0,
+        209.0
+      ],
+      "category_id": 1,
+      "id": "eb2ef301-02fc-4cb8-b063-951e837ff859"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        280,
+        1264,
+        239.0,
+        271.0
+      ],
+      "category_id": 0,
+      "id": "54f59268-d2ff-4170-9519-5fdc86ebe512"
+    },
+    {
+      "image_id": 90,
+      "bbox": [
+        584,
+        16,
+        247.0,
+        234.0
+      ],
+      "category_id": 0,
+      "id": "88d079f7-6605-488b-a021-16f5303e53c5"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        988,
+        12,
+        253.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "0bfc2ca4-cdbf-4bd0-aa46-d9979a0c68b8"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1657,
+        5,
+        246.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "47810b1d-f053-4744-aa51-5a0243d2e4d6"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1292,
+        2,
+        255.0,
+        236.0
+      ],
+      "category_id": 0,
+      "id": "a3c22e90-36bf-41ae-8d4b-328d5123c40e"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1486,
+        147,
+        233.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "42d82a27-ac4f-466c-af79-ba68713bfcf4"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1290,
+        238,
+        247.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "aebcbac2-93fb-4cfd-94f3-c21bd7a24a02"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1042,
+        257,
+        257.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "01e8302c-6ceb-4c3e-ba2e-9541cd7bcdd3"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1049,
+        512,
+        253.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "39be0e1a-12ea-4f7f-b213-b15fd32ca040"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1147,
+        914,
+        182.0,
+        192.0
+      ],
+      "category_id": 1,
+      "id": "b41bb3ce-d4ad-46db-a109-0f9eaa6df8a6"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        787,
+        527,
+        248.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "e4cfff33-9156-4813-a58c-ae8d0013d3a2"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1608,
+        343,
+        292.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "527194ec-8050-40e1-99f3-c1fa6059cab6"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        1317,
+        512,
+        255.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "9e3106b4-cd6d-47ad-8a02-5436f37f3bc9"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        740,
+        194,
+        238.0,
+        262.0
+      ],
+      "category_id": 0,
+      "id": "993337c7-7c22-45c7-b2fe-1384e2f2f64f"
+    },
+    {
+      "image_id": 92,
+      "bbox": [
+        512,
+        282,
+        248.0,
+        277.0
+      ],
+      "category_id": 0,
+      "id": "dd1135ad-6bef-4a7b-83ee-f88db5afbe7a"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        1508,
+        895,
+        262.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "f5e7e7e9-703c-46d1-9536-a28e6d3564ce"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        1008,
+        191,
+        274.0,
+        280.0
+      ],
+      "category_id": 0,
+      "id": "5b745c60-19c1-4bea-baec-48a74346f285"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        650,
+        27,
+        240.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "568d1870-3564-4d91-81e3-e9feaf8711d7"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        709,
+        257,
+        269.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "1b1fbd48-29ff-46c7-8cd9-6882e07d7f22"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        642,
+        1272,
+        263.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "158a8239-5223-4eb5-96c2-af182275cd97"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        1243,
+        537,
+        265.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "5c9cc10f-e800-4956-b695-58475c6d73c5"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        892,
+        17,
+        241.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "7c8198b5-5dd5-4663-8ce5-a8299aac65db"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        941,
+        1260,
+        268.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "65183e45-471e-4345-bcca-7885b9ff6f52"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        1444,
+        37,
+        270.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "3cdb0db9-fa52-4c8f-87d5-fd4ee5ac24bd"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        446,
+        243,
+        260.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "e00a8f1e-41fb-4553-b268-28ecd5e85906"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        353,
+        25,
+        228.0,
+        235.0
+      ],
+      "category_id": 0,
+      "id": "3b9fd91a-1431-4124-a075-ca0007cbd451"
+    },
+    {
+      "image_id": 99,
+      "bbox": [
+        998,
+        539,
+        270.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "4820cb4c-a21f-4c20-8058-4a14950f799e"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        502,
+        567,
+        284.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "5a6f8a56-0182-4476-9264-b103b8a9038c"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        603,
+        795,
+        251.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "7ff17b3c-69fd-4b29-8927-de5f39360add"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1607,
+        3,
+        277.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "f62b32f6-e251-48f7-83b4-af8bdca49212"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1245,
+        466,
+        199.0,
+        215.0
+      ],
+      "category_id": 1,
+      "id": "ddeb60f3-9003-4545-96b1-2a6cb96cb62c"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        303,
+        952,
+        241.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "c0f6a9f9-db0a-4626-a59c-41ade8bed78f"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        13,
+        828,
+        254.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "7a73d3bb-534b-440a-9448-938239096b63"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1848,
+        463,
+        111.0,
+        208.0
+      ],
+      "category_id": 1,
+      "id": "63dd05d1-febb-4c6f-b0a4-f4c9d5ba6b72"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        108,
+        1046,
+        156.0,
+        166.0
+      ],
+      "category_id": 1,
+      "id": "3b201b65-213d-4227-a29e-dc6d5baec1f8"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1118,
+        906,
+        196.0,
+        189.0
+      ],
+      "category_id": 1,
+      "id": "3773dec3-a515-425c-a5c1-43d4df3ff1de"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        851,
+        499,
+        257.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "aee6ed6a-b908-4a48-bc16-b551a7ca9f73"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1450,
+        518,
+        307.0,
+        261.0
+      ],
+      "category_id": 1,
+      "id": "02a84a67-fe40-487d-935d-73683d63d0dc"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1115,
+        629,
+        195.0,
+        173.0
+      ],
+      "category_id": 1,
+      "id": "77567a58-0a46-4ea9-918a-575543d19361"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1460,
+        358,
+        189.0,
+        160.0
+      ],
+      "category_id": 1,
+      "id": "1830bf18-e28c-44c9-99c0-5d9fc843937b"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1402,
+        23,
+        192.0,
+        173.0
+      ],
+      "category_id": 1,
+      "id": "7a2d9656-a5d1-4163-919a-ca660c983459"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        232,
+        137,
+        267.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "a49c808b-1956-4f70-a997-fd25a092255f"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1330,
+        792,
+        290.0,
+        283.0
+      ],
+      "category_id": 0,
+      "id": "55c01552-001a-40c0-8515-65382e8c2008"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        841,
+        750,
+        251.0,
+        247.0
+      ],
+      "category_id": 0,
+      "id": "310a7b40-1999-4921-8071-8a0113cdb2d4"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        750,
+        16,
+        244.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "861e14bd-1a0a-4798-9081-2fac99f32592"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1066,
+        23,
+        238.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "d8737105-f458-4bb1-9045-d42b5044efdf"
+    },
+    {
+      "image_id": 103,
+      "bbox": [
+        1480,
+        163,
+        153.0,
+        189.0
+      ],
+      "category_id": 1,
+      "id": "f8f9f455-94eb-48c4-a2bf-85f54da8a52f"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        998,
+        564,
+        269.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "791330ad-9c99-4fc8-8ac1-c763d88bd357"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        1515,
+        408,
+        286.0,
+        271.0
+      ],
+      "category_id": 0,
+      "id": "c2a39849-9d9d-4f37-96db-a73f5ffb317a"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        735,
+        574,
+        246.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "e1ea4e15-699f-41ae-a94c-3c99c2ec8e36"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        327,
+        1029,
+        251.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "0347c1b8-74d3-497b-a817-5900bf73cb62"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        138,
+        1218,
+        253.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "9706dc31-de27-49e7-a86f-3ed56afd3509"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        454,
+        1266,
+        241.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "c5ff7d95-2c40-463a-b700-c62e4d3d2db7"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        1026,
+        1102,
+        243.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "b9c584c4-d204-4d42-a3ec-4319d085d3f7"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        846,
+        249,
+        249.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "4dce663b-d2f7-4eb6-85e3-00bb0f11e7cb"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        1431,
+        0,
+        288.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "3f58785f-48c4-423c-ad9a-2dae41befabd"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        1085,
+        104,
+        226.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "ade2f53a-6e35-480d-8e96-1f2a5acac6b8"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        866,
+        27,
+        234.0,
+        222.0
+      ],
+      "category_id": 0,
+      "id": "8c6e0f43-7ec0-40a0-9227-2b28d699ff9b"
+    },
+    {
+      "image_id": 116,
+      "bbox": [
+        1292,
+        201,
+        258.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "2ba2f5b8-40ac-4127-b40c-2cc52ec554fe"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1481,
+        797,
+        279.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "98f6eb1b-0091-413d-8a17-58247c70e09d"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        564,
+        118,
+        240.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "107238e3-e192-45f0-8c8e-03085ee077a3"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        843,
+        1253,
+        251.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "ecbec6cd-5bd8-4324-aff1-c88f07e307c0"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1008,
+        228,
+        255.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "0880745f-aaa8-4d19-87e2-3ab3df34dc08"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        532,
+        1268,
+        253.0,
+        240.0
+      ],
+      "category_id": 0,
+      "id": "4ea3995c-7e4a-4316-890b-6e0111dbbcb3"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1520,
+        1243,
+        260.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "b3328a4d-16ae-40a2-bb77-e2c194c03bf0"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        302,
+        1277,
+        230.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "540c0f27-93a2-4e3f-8814-f9e89a67d461"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1621,
+        15,
+        247.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "d9192cd7-123b-4c5f-a666-1ffc7f4be5d0"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1353,
+        49,
+        265.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "e3981255-b5ff-4547-a13e-bc011d026f11"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        802,
+        56,
+        247.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "22ff4be7-d2f6-481a-85f1-7e599d2294ac"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        1248,
+        1233,
+        277.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "3f55e5fa-c884-4f8f-856e-b0fe4594ea7b"
+    },
+    {
+      "image_id": 119,
+      "bbox": [
+        120,
+        986,
+        233.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "d2ec3720-3f74-42db-921b-a67a97700bb9"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1197,
+        1079,
+        261.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "1a4738c8-48de-4b46-b4e3-6bab439f17c6"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1677,
+        0,
+        259.0,
+        231.0
+      ],
+      "category_id": 0,
+      "id": "5a1235ca-9a9a-443f-9640-255a5c2a53dc"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1018,
+        920,
+        281.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "27f1aa38-886c-4d22-8355-3e610648475b"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        608,
+        313,
+        253.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "9904bc97-5c1e-4878-a2e4-b6d9bd00b990"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        884,
+        363,
+        243.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "acf51e07-f8e2-4b31-a0ae-4099c6b8d9e4"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1289,
+        0,
+        239.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "5e0feb39-60d1-48b3-9be3-56d21f6865a8"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        938,
+        1146,
+        259.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "9edb4f4d-30ac-4817-b5f2-b9b61b61c5ef"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1488,
+        104,
+        269.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "2c19c575-1cfb-4557-b8e1-c3ec955ab56e"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1540,
+        366,
+        269.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "0474010d-a06e-4544-b361-9f0016d7a621"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        56,
+        346,
+        246.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "eab32d95-2d38-45b3-b084-611373bbc7e6"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1331,
+        495,
+        276.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "8d7c25b0-5b36-4fc1-88b7-2221829c9258"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        730,
+        791,
+        201.0,
+        196.0
+      ],
+      "category_id": 1,
+      "id": "575dca92-699e-4d2f-8ecc-07ae60c6dd7d"
+    },
+    {
+      "image_id": 123,
+      "bbox": [
+        1040,
+        82,
+        266.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "cd61c149-0b30-40c4-9b65-114d8e23701d"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        143,
+        490,
+        185.0,
+        176.0
+      ],
+      "category_id": 1,
+      "id": "1011d63e-112a-4bdc-9a89-d39f8086d55c"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1481,
+        833,
+        270.0,
+        233.0
+      ],
+      "category_id": 0,
+      "id": "bef8ae92-5ce2-40bd-9e83-4162d9cdd512"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        959,
+        788,
+        274.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "67a75098-e7d7-43fa-b4ee-4d6fecc558a5"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1225,
+        708,
+        291.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "319127d5-2a4c-4118-acd5-0b1c0f8139b0"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        679,
+        696,
+        245.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "17dff544-5a06-4435-a7e3-093002cc981b"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        724,
+        315,
+        261.0,
+        253.0
+      ],
+      "category_id": 0,
+      "id": "28c42aa2-2865-4813-a8da-c2ac2c9e0706"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1243,
+        260,
+        275.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "34a2b728-ad1a-451b-85c5-d08bdcd2fc45"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        0,
+        423,
+        163.0,
+        205.0
+      ],
+      "category_id": 1,
+      "id": "0b748f81-a84c-4a96-b241-0c2a1a7d9523"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1713,
+        628,
+        246.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "3e7a147d-39f5-47e1-958d-27a57f42c87a"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1829,
+        463,
+        130.0,
+        175.0
+      ],
+      "category_id": 1,
+      "id": "ef18d312-6428-40b2-a10b-7cce3b35cb51"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        982,
+        267,
+        225.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "106a9e38-9f71-4935-97f0-ca4279ff8de4"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1508,
+        485,
+        286.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "17148fae-e62a-4ddc-a4f0-5dcc03b87db5"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1388,
+        1322,
+        188.0,
+        175.0
+      ],
+      "category_id": 1,
+      "id": "ee8ecdfa-0786-49e9-92ba-8ae705aacc24"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1152,
+        34,
+        171.0,
+        140.0
+      ],
+      "category_id": 1,
+      "id": "65df3dd3-8917-4361-8ff6-ad57162496f4"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        974,
+        27,
+        186.0,
+        178.0
+      ],
+      "category_id": 1,
+      "id": "38829740-0551-4501-b9a1-3592144985c8"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        659,
+        82,
+        255.0,
+        245.0
+      ],
+      "category_id": 0,
+      "id": "99105162-caa1-4d97-80bf-6cd7d86b182a"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        726,
+        1259,
+        218.0,
+        213.0
+      ],
+      "category_id": 1,
+      "id": "293e8ae2-43bc-4795-94c8-12d54c442813"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        839,
+        1029,
+        266.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "c434b266-e236-4894-8ecb-4c3610ec0759"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        441,
+        395,
+        243.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "993449b3-dd11-4c66-9fad-1e5aacfd1d59"
+    },
+    {
+      "image_id": 129,
+      "bbox": [
+        1248,
+        533,
+        185.0,
+        165.0
+      ],
+      "category_id": 1,
+      "id": "bca98b04-9395-4e13-b419-3e7af8e36a5b"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1242,
+        82,
+        266.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "c043ffca-b02b-4ac1-a929-c58dbec0ca9d"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        160,
+        249,
+        244.0,
+        273.0
+      ],
+      "category_id": 0,
+      "id": "eda79968-63f8-4f2c-b48c-5107480db97b"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1227,
+        903,
+        199.0,
+        206.0
+      ],
+      "category_id": 1,
+      "id": "896627b5-b2b3-494b-9fff-c94e2e606e16"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1486,
+        0,
+        271.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "037c3765-b13d-4c75-b8b7-6d80081f8b47"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1167,
+        1236,
+        264.0,
+        271.0
+      ],
+      "category_id": 0,
+      "id": "84d33508-9a7a-4895-b710-ae770d4459cc"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1053,
+        316,
+        251.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "e8c357a7-0507-424e-a0f6-fc1f2b861fa7"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1724,
+        1077,
+        235.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "0b2b8817-6228-4c79-8e2e-ac0cb4307df9"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1694,
+        816,
+        265.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "398b358f-4720-47d5-8dde-64d7ca3396f2"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1436,
+        883,
+        288.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "2299bf6a-ac7d-4a2b-b4d7-17cf5078cba0"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1374,
+        1136,
+        261.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "5f20c22c-4d75-4bd7-9303-9d4e81ec989f"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1796,
+        144,
+        163.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "0c3c3dde-bb70-4faa-8d1b-dfba5a0d4273"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        993,
+        1039,
+        274.0,
+        257.0
+      ],
+      "category_id": 0,
+      "id": "35cfd435-9601-447f-814a-83c4b1fd4bc8"
+    },
+    {
+      "image_id": 132,
+      "bbox": [
+        1602,
+        1258,
+        261.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "2be8fbcd-c25a-4408-9c46-c7e3e22659c0"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        0,
+        1243,
+        150.0,
+        281.0
+      ],
+      "category_id": 0,
+      "id": "c57621a0-781e-4bf5-a586-b65ac16bd774"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        498,
+        1161,
+        249.0,
+        281.0
+      ],
+      "category_id": 0,
+      "id": "ec640c87-440b-4a7f-b10b-e380707e6714"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1871,
+        1194,
+        88.0,
+        233.0
+      ],
+      "category_id": 0,
+      "id": "334e1791-1d91-4ef4-b97d-7f33f077b36f"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        966,
+        0,
+        251.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "2eded358-a389-4ad3-9130-ad285d64f90f"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        991,
+        1228,
+        246.0,
+        261.0
+      ],
+      "category_id": 0,
+      "id": "fad009da-3ab6-42cf-8eda-9fa5636586ca"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1548,
+        0,
+        276.0,
+        236.0
+      ],
+      "category_id": 0,
+      "id": "6a1dd29c-a96c-495f-82e6-491e44916066"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        735,
+        1243,
+        238.0,
+        244.0
+      ],
+      "category_id": 0,
+      "id": "d0685cee-c642-4ed5-b684-0993639f37a9"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1217,
+        0,
+        261.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "49c66823-cc00-4355-bb4a-670e53e3c6c5"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        839,
+        1024,
+        249.0,
+        252.0
+      ],
+      "category_id": 0,
+      "id": "c3ead5a9-b21b-4220-ba87-baae9c489abe"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1207,
+        990,
+        246.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "1633ab1d-15d6-4167-8dcc-9c95d3aadbc2"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1573,
+        236,
+        286.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "dee129ed-4c82-4cb7-9c17-a490f352751c"
+    },
+    {
+      "image_id": 136,
+      "bbox": [
+        1234,
+        1241,
+        264.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "155eac20-d805-44ba-91a9-ec4e265e4670"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1030,
+        1211,
+        244.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "6e595c8b-4237-45ae-a0d2-367a03bd8d91"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1269,
+        12,
+        254.0,
+        244.0
+      ],
+      "category_id": 0,
+      "id": "eb21d458-c69f-4442-8eac-21dec2b7627d"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        732,
+        1253,
+        254.0,
+        269.0
+      ],
+      "category_id": 0,
+      "id": "becef409-1175-48db-9531-60cc7c3d0fe6"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        381,
+        291,
+        199.0,
+        184.0
+      ],
+      "category_id": 1,
+      "id": "6e9ad6e4-4203-465d-8f6c-03136eae8a25"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1694,
+        0,
+        265.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "8b43a3d2-06fe-4c0f-9d7c-fdc3f1a5d25e"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1058,
+        92,
+        226.0,
+        234.0
+      ],
+      "category_id": 0,
+      "id": "ea7798e4-ea8e-4af9-86cb-469671f7d2e8"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1478,
+        122,
+        276.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "bfe3676b-2214-4bb7-8857-ff73cee268c5"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        896,
+        251,
+        266.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "73ece09d-30de-40df-82d7-ea60d95e777d"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        232,
+        22,
+        232.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "2f5e433f-1c3f-4bf2-ae88-b60c7be5e3e9"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        1652,
+        1248,
+        274.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "fbd245ca-8605-4ae2-b6d5-f50116cab9b8"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        466,
+        70,
+        249.0,
+        263.0
+      ],
+      "category_id": 0,
+      "id": "9dd410f0-3b13-47d0-8c1f-317b82b60765"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        784,
+        15,
+        271.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "07c2c288-6c4e-4d9b-8461-3d27282614e9"
+    },
+    {
+      "image_id": 137,
+      "bbox": [
+        672,
+        219,
+        229.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "73c5d609-f542-4f0c-a292-f1170a049288"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1180,
+        0,
+        268.0,
+        241.0
+      ],
+      "category_id": 0,
+      "id": "d9e20222-113a-4718-b8ed-1065ead2e25c"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1771,
+        1238,
+        188.0,
+        266.0
+      ],
+      "category_id": 0,
+      "id": "2aa95701-9288-4396-9b1d-e2d098cf52ca"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1443,
+        0,
+        261.0,
+        246.0
+      ],
+      "category_id": 0,
+      "id": "aa20b984-f62d-4163-82f3-07cbc7ade0de"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1200,
+        413,
+        268.0,
+        258.0
+      ],
+      "category_id": 0,
+      "id": "7a3cf159-c59d-44c6-9ad4-874439601c6e"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1538,
+        256,
+        288.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "506cf934-b95c-4d40-b0ce-8215793a7d5f"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        904,
+        0,
+        238.0,
+        231.0
+      ],
+      "category_id": 0,
+      "id": "d94996f4-e466-4de7-8b12-0e55b3b97370"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        804,
+        1221,
+        246.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "76b403c1-f445-44bf-aabc-1841a22218cb"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1083,
+        1213,
+        268.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "c34e1221-afb0-4955-a638-f87275eb70e6"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1299,
+        186,
+        271.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "b9f04bb2-dc4a-4c67-ae17-cbfd6b3514ca"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        568,
+        159,
+        246.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "6834e4ce-2e85-488d-b6cc-a18ca3c057cb"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        1346,
+        1233,
+        276.0,
+        266.0
+      ],
+      "category_id": 0,
+      "id": "5452e173-2f10-4a99-8ed8-0aae740eaea5"
+    },
+    {
+      "image_id": 141,
+      "bbox": [
+        809,
+        184,
+        239.0,
+        239.0
+      ],
+      "category_id": 0,
+      "id": "d93cd117-53bd-4104-a2fe-d8c6c2da5ca8"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        1229,
+        0,
+        247.0,
+        249.0
+      ],
+      "category_id": 0,
+      "id": "ea050829-8a2e-4e68-a152-acaf130cda55"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        473,
+        1199,
+        244.0,
+        248.0
+      ],
+      "category_id": 0,
+      "id": "3f4b0d8e-0a32-472c-9396-a05aef4602ab"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        1476,
+        0,
+        258.0,
+        226.0
+      ],
+      "category_id": 0,
+      "id": "25ba273d-a139-486c-a040-3207a4c865fa"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        235,
+        219,
+        251.0,
+        251.0
+      ],
+      "category_id": 0,
+      "id": "2b6debf3-e041-42ce-8d9d-b59938e34d27"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        953,
+        1243,
+        244.0,
+        256.0
+      ],
+      "category_id": 0,
+      "id": "1b33127c-8d1b-4012-b142-0e2c8d9f059d"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        978,
+        0,
+        256.0,
+        254.0
+      ],
+      "category_id": 0,
+      "id": "f2ff6ced-42ee-4419-9c07-beb70f8d86ee"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        493,
+        134,
+        252.0,
+        259.0
+      ],
+      "category_id": 0,
+      "id": "2e27a19f-1657-4f1f-81cc-01308eac9aa8"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        707,
+        1266,
+        244.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "f996ec66-bf32-400e-9e45-79e246222d3f"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        680,
+        356,
+        236.0,
+        233.0
+      ],
+      "category_id": 0,
+      "id": "2d0375c7-d8a5-4ebf-8d29-20e193501f1e"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        41,
+        1241,
+        246.0,
+        286.0
+      ],
+      "category_id": 0,
+      "id": "3efd85a6-1894-4886-a27e-4bdd2459024d"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        1476,
+        224,
+        268.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "f0d0624b-26bc-4228-8a78-1ee24d50995b"
+    },
+    {
+      "image_id": 145,
+      "bbox": [
+        1277,
+        1007,
+        288.0,
+        286.0
+      ],
+      "category_id": 0,
+      "id": "6446754e-f923-4700-bb76-acab94c605b6"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        593,
+        27,
+        250.0,
+        238.0
+      ],
+      "category_id": 0,
+      "id": "d66e281c-091a-4ace-9876-9304419768e8"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1106,
+        392,
+        247.0,
+        250.0
+      ],
+      "category_id": 0,
+      "id": "eda47723-1cd0-4263-ad39-b10040cf0e89"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1488,
+        1120,
+        277.0,
+        275.0
+      ],
+      "category_id": 0,
+      "id": "b767ebb6-0ea4-4cf7-acf2-31617d1eb9ab"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1329,
+        230,
+        247.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "6187d74f-1f38-4630-b891-03cf42e00a7d"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        623,
+        1268,
+        260.0,
+        264.0
+      ],
+      "category_id": 0,
+      "id": "2a32878d-6594-436e-a441-df3f28c637ac"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1057,
+        1258,
+        265.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "76cea090-a815-4d80-9275-4b9d3913cf4d"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1177,
+        17,
+        272.0,
+        260.0
+      ],
+      "category_id": 0,
+      "id": "e85f41bc-a566-4da4-a682-5fa7fe3e2939"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1451,
+        34,
+        270.0,
+        255.0
+      ],
+      "category_id": 0,
+      "id": "2d90aa26-6e3f-4522-9c92-2f9863ea04d2"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        814,
+        686,
+        262.0,
+        270.0
+      ],
+      "category_id": 0,
+      "id": "0d249a7f-0edf-47ed-88bb-363c956face4"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        1035,
+        809,
+        267.0,
+        267.0
+      ],
+      "category_id": 0,
+      "id": "f1053444-edd5-4a38-b8a0-507ad8de15e6"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        851,
+        17,
+        269.0,
+        265.0
+      ],
+      "category_id": 0,
+      "id": "49e4eb71-d729-4099-9c6a-7b5d123fc5ed"
+    },
+    {
+      "image_id": 151,
+      "bbox": [
+        760,
+        463,
+        228.0,
+        243.0
+      ],
+      "category_id": 0,
+      "id": "ee94edc3-47c6-4d89-85d3-2334243f2513"
+    }
+  ]
+}

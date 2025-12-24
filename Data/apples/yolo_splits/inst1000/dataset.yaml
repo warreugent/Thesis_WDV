@@ -1,0 +1,6 @@
+path: /home/warredv/Thesis_WDV/Data/apples/yolo_splits/inst1000
+train: images/train
+val: images/val
+names:
+  - GoodApple
+  - BadApple

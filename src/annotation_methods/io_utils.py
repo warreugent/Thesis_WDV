@@ -39,7 +39,7 @@ def retrieve_image_batches(images_folder, batch_size, sample_size=None, random_s
 
 
 
-def build_results_output_path(experiment_name, images_folder, model_name):
+def build_results_output_path(output_path, images_folder, model_name):
     """
     Construct a standardized output file path for prediction results.
 
@@ -55,7 +55,7 @@ def build_results_output_path(experiment_name, images_folder, model_name):
     parent = os.path.basename(os.path.dirname(os.path.dirname(images_folder)))
     base = os.path.splitext(os.path.basename(images_folder))[0]
 
-    out_dir = os.path.join("..", "Results", experiment_name)
+    out_dir = output_path
     os.makedirs(out_dir, exist_ok=True)
 
     out_file = os.path.join(out_dir, f"{parent}_{base}_{model_name}_predictions.json")
@@ -70,93 +70,26 @@ def write_coco_output(
     annotations,
     num_images,
     num_boxes,
-    total_time,
-    experiment_name, 
-    gpu_hourly_price=2.5,
-    gpu_tdp_watts=250.0,
-    gpu_utilization_factor=0.9,
-    power_utilization_factor=0.7,
-    electricity_price_per_kwh=0.30,
+    total_train_time,
+    total_inf_time,
+    output_path, 
 ):
     """
-    Build and write a COCO-style JSON file with predictions and metadata.
+    Write prediction results and metadata to a COCO-format JSON file.
 
-    This function:
-    1. Computes basic timing statistics:
-       - Average inference time per image.
-       - Average inference time per bounding box.
-    2. Estimates infrastructure and energy costs for the inference run:
-       - GPU hours used (scaled by `gpu_utilization_factor`).
-       - Infrastructure cost in EUR using `gpu_hourly_price`.
-       - Energy consumption in kWh (using GPU TDP and `power_utilization_factor`).
-       - Energy cost in EUR using `electricity_price_per_kwh`.
-       - Total cost and cost per predicted bounding box.
-    3. Assembles a COCO-style dictionary with:
-       - `info`: run description, date, timing, and cost statistics.
-       - `images`: list of image entries (already in COCO-compatible format).
-       - `annotations`: list of prediction annotations.
-       - `categories`: list of category definitions derived from `categories_list`.
-    4. Builds an output path via `build_output_path` and writes the JSON file there.
-
-    Parameters
-    ----------
-    images_folder : str
-        Path to the folder containing the input images.
-    model_name : str
-        Name or identifier of the model used for predictions.
-    categories_list : list[str]
-        List of category names; each is converted into a COCO category with an ID.
-    images : list[dict]
-        COCO-style image entries.
-    annotations : list[dict]
-        COCO-style annotation entries for predicted bounding boxes.
-    num_images : int
-        Number of images processed.
-    num_boxes : int
-        Number of predicted bounding boxes.
-    total_time : float
-        Total inference time in seconds over all images.
-    gpu_hourly_price : float, optional
-        Cost of GPU usage per hour in EUR.
-    gpu_tdp_watts : float, optional
-        Thermal Design Power (TDP) of the GPU in watts.
-    gpu_utilization_factor : float, optional
-        Factor (0-1) to account for average GPU utilization over the run.
-    power_utilization_factor : float, optional
-        Factor (0-1) to account for effective power draw vs. TDP.
-    electricity_price_per_kwh : float, optional
-        Electricity price per kWh in EUR.
-
-    Returns
-    -------
-    str
-        Path to the written COCO JSON output file.
+    The function assembles COCO-style images, annotations, categories, and
+    basic experiment statistics, then writes the result to disk.
     """
-    # ---- timing statistics ----
-    avg_time_image = total_time / num_images if num_images else 0.0
-    avg_time_bbox = total_time / num_boxes if num_boxes else 0.0
-
-    # ---- cost / energy estimates ----
-    gpu_hours = (total_time / 3600.0) * gpu_utilization_factor
-    infra_cost_eur = gpu_hours * gpu_hourly_price
-    energy_kwh = (gpu_tdp_watts / 1000.0) * (total_time / 3600.0) * power_utilization_factor
-    energy_cost_eur = energy_kwh * electricity_price_per_kwh
-    total_cost_eur = infra_cost_eur + energy_cost_eur
-
-    # cost_per_image_eur = total_cost_eur / num_images if num_images else 0.0
-    cost_per_bbox_eur = total_cost_eur / num_boxes if num_boxes else 0.0
+    # Build COCO-style output
 
     info = {
         "description": f"Predictions on {images_folder} with {model_name}",
         "date_created": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "num_images": num_images,
         "num_predicted_bbox": num_boxes,
-        "avg_inference_time_s_image": avg_time_image,
-        "avg_inference_time_s_bbox": avg_time_bbox,
-        "total_inference_time_s": total_time,
-        "gpu_hours_estimate": gpu_hours,
-        "total_cost_eur": total_cost_eur,
-        "cost_per_bbox_eur": cost_per_bbox_eur,
+        "total_training_time_s": total_train_time,
+        "total_inference_time_s": total_inf_time,
+
     }
 
     categories = [{"id": i + 1, "name": name} for i, name in enumerate(categories_list)]
@@ -168,7 +101,7 @@ def write_coco_output(
         "categories": categories,
     }
 
-    out_file = build_results_output_path(experiment_name, images_folder, model_name)
+    out_file = build_results_output_path(output_path, images_folder, model_name)
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(coco_output, f, indent=2)
 

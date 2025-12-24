@@ -1,0 +1,31 @@
+{
+  "info": {
+    "description": "Predictions on ../Data/apples/images/test with gd_t",
+    "date_created": "2025-12-23 21:57:10",
+    "num_images": 2,
+    "num_predicted_bbox": 0,
+    "total_training_time_s": 0.0,
+    "total_inference_time_s": 9.397312093060464
+  },
+  "images": [
+    {
+      "id": 2755588920,
+      "file_name": "images/test/IMG_0386.png"
+    },
+    {
+      "id": 995177065,
+      "file_name": "images/test/IMG_0335.png"
+    }
+  ],
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "good apple"
+    },
+    {
+      "id": 2,
+      "name": "bad apple"
+    }
+  ]
+}
