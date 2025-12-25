@@ -92,7 +92,7 @@ def write_coco_output(
 
     }
 
-    categories = [{"id": i + 1, "name": name} for i, name in enumerate(categories_list)]
+    categories = [{"id": i, "name": name} for i, name in enumerate(categories_list)]
 
     coco_output = {
         "info": info,
