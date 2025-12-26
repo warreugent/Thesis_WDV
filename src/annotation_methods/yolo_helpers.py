@@ -4,6 +4,8 @@ import json
 import shutil
 from pathlib import Path
 from collections import defaultdict
+from collections.abc import Sequence
+from typing import Union  
 
 
 def coco_manifest_to_yolo(
@@ -190,10 +192,9 @@ def convert_inst_split_to_yolo(
 
     return {"inst": inst, "train": stats_train, "val": stats_val}
 
-
 def convert_all_inst_splits_to_yolo(
     *,
-    inst_values: list[int],
+    inst_values: Sequence[int],
     coco_json: str | Path,
     dataset_root: str | Path,
     splits_root: str | Path,
@@ -205,6 +206,7 @@ def convert_all_inst_splits_to_yolo(
     Run conversion for multiple inst splits and return a list of per-inst stats.
     """
     results: list[dict] = []
+
     for inst in inst_values:
         res = convert_inst_split_to_yolo(
             inst=inst,
@@ -216,7 +218,9 @@ def convert_all_inst_splits_to_yolo(
             flatten_images=flatten_images,
         )
         results.append(res)
+
     return results
+
 
 def write_yolo_dataset_yaml(yolo_dir, stats_json=None, out_yaml=None):
     yolo_dir = Path(yolo_dir).expanduser()

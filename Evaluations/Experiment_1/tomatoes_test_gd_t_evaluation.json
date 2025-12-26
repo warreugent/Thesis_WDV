@@ -1,6 +1,6 @@
 {
   "info": {
-    "timestamp": "2025-12-25 12:21:19",
+    "timestamp": "2025-12-26 12:37:09",
     "dataset_name": "tomatoes",
     "subset_name": "test",
     "model_name": "gd_t",
@@ -29,35 +29,35 @@
     "bbox_removals": 2,
     "precision": 0.8461538461538461,
     "recall": 0.6875,
-    "total_annotation_time_s": 45.48116108603776,
-    "annotation_time_per_bbox_s": 2.84257256787736,
-    "annotation_time_manual_pct": 71.65604224208074,
-    "annotation_time_machine_pct": 28.343957757919256,
-    "total_cost_usd": 0.0072720830125378695,
-    "cost_per_bbox_usd": 0.00045450518828361685
+    "total_annotation_time_s": 45.41550742593594,
+    "annotation_time_per_bbox_s": 2.8384692141209964,
+    "annotation_time_manual_pct": 71.75962979858387,
+    "annotation_time_machine_pct": 28.240370201416127,
+    "total_cost_usd": 0.007235046871018044,
+    "cost_per_bbox_usd": 0.00045219042943862777
   },
   "efficiency_metrics@iou_0.70": {
     "bbox_additions": 6,
     "bbox_removals": 3,
     "precision": 0.7692307692307693,
     "recall": 0.625,
-    "total_annotation_time_s": 52.37116108603775,
-    "annotation_time_per_bbox_s": 3.2731975678773595,
-    "annotation_time_manual_pct": 75.38500041108585,
-    "annotation_time_machine_pct": 24.614999588914145,
-    "total_cost_usd": 0.0072720830125378695,
-    "cost_per_bbox_usd": 0.00045450518828361685
+    "total_annotation_time_s": 52.305507425935936,
+    "annotation_time_per_bbox_s": 3.269094214120996,
+    "annotation_time_manual_pct": 75.47962335687743,
+    "annotation_time_machine_pct": 24.520376643122574,
+    "total_cost_usd": 0.007235046871018044,
+    "cost_per_bbox_usd": 0.00045219042943862777
   },
   "efficiency_metrics@iou_0.90": {
     "bbox_additions": 8,
     "bbox_removals": 5,
     "precision": 0.6153846153846154,
     "recall": 0.5,
-    "total_annotation_time_s": 66.15116108603775,
-    "annotation_time_per_bbox_s": 4.134447567877359,
-    "annotation_time_manual_pct": 80.51257018864536,
-    "annotation_time_machine_pct": 19.487429811354644,
-    "total_cost_usd": 0.0072720830125378695,
-    "cost_per_bbox_usd": 0.00045450518828361685
+    "total_annotation_time_s": 66.08550742593593,
+    "annotation_time_per_bbox_s": 4.130344214120996,
+    "annotation_time_manual_pct": 80.59255663534115,
+    "annotation_time_machine_pct": 19.407443364658846,
+    "total_cost_usd": 0.007235046871018044,
+    "cost_per_bbox_usd": 0.00045219042943862777
   }
 }
