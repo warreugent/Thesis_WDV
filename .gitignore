@@ -34,6 +34,14 @@ Timing\ Experiments/**/*.[Tt][Ii][Ff]
 Timing\ Experiments/**/*.[Tt][Ii][Ff][Ff]
 Timing\ Experiments/**/*.[Bb][Mm][Pp]
 
+# Ignore image files anywhere under Models/
+Models/**/*.[Jj][Pp][Gg]
+Models/**/*.[Jj][Pp][Ee][Gg]
+Models/**/*.[Pp][Nn][Gg]
+Models/**/*.[Ww][Ee][Bb][Pp]
+Models/**/*.[Tt][Ii][Ff]
+Models/**/*.[Tt][Ii][Ff][Ff]
+Models/**/*.[Bb][Mm][Pp]
 
 # Ignore zip archives
 *.zip

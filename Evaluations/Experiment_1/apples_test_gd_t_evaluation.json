@@ -1,10 +1,13 @@
 {
   "info": {
-    "timestamp": "2025-12-27 17:08:12",
+    "timestamp": "2025-12-28 00:02:04",
     "dataset_name": "apples",
     "subset_name": "test",
     "model_name": "gd_t",
     "iou_type": "bbox",
+    "num_initial_bbox": 0,
+    "total_training_time_s": 0.0,
+    "total_inference_time_s": 9.493295295978896,
     "num_predicted_bbox": 0,
     "num_gt_bbox": 25,
     "num_eval_images": 2,
