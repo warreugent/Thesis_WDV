@@ -1,77 +1,39 @@
 name: rexomni
 channels:
   - defaults
-  - conda-forge
 dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=5.1=1_gnu
-  - asttokens=3.0.1=pyhd8ed1ab_0
   - bzip2=1.0.8=h5eee18b_6
   - ca-certificates=2025.12.2=h06a4308_0
-  - comm=0.2.3=pyhe01879c_0
-  - debugpy=1.8.19=py310h8a20257_0
-  - decorator=5.2.1=pyhd8ed1ab_0
-  - exceptiongroup=1.3.1=pyhd8ed1ab_0
-  - executing=2.2.1=pyhd8ed1ab_0
   - expat=2.7.3=h7354ed3_4
-  - ipykernel=7.1.0=pyha191276_0
-  - ipython=8.37.0=pyh8f84b5b_0
-  - jedi=0.19.2=pyhd8ed1ab_1
-  - jupyter_client=8.7.0=pyhcf101f3_0
-  - jupyter_core=5.9.1=pyhc90fa1f_0
-  - keyutils=1.6.3=hb9d3cd8_0
-  - krb5=1.21.3=h659f571_0
   - ld_impl_linux-64=2.44=h153f514_2
-  - libedit=3.1.20250104=pl5321h7949ede_0
   - libexpat=2.7.3=h7354ed3_4
   - libffi=3.4.4=h6a678d5_1
   - libgcc=15.2.0=h69a1729_7
   - libgcc-ng=15.2.0=h166f726_7
   - libgomp=15.2.0=h4751f2c_7
   - libnsl=2.0.0=h5eee18b_0
-  - libsodium=1.0.20=h4ab18f5_0
   - libstdcxx=15.2.0=h39759b7_7
   - libstdcxx-ng=15.2.0=hc03a8fd_7
   - libuuid=1.41.5=h5eee18b_0
   - libxcb=1.17.0=h9b100fa_0
   - libzlib=1.3.1=hb25bd0a_0
-  - matplotlib-inline=0.2.1=pyhd8ed1ab_0
   - ncurses=6.5=h7934f7d_0
-  - nest-asyncio=1.6.0=pyhd8ed1ab_1
-  - openssl=3.6.0=h26f9b46_0
-  - packaging=25.0=pyh29332c3_1
-  - parso=0.8.5=pyhcf101f3_0
-  - pexpect=4.9.0=pyhd8ed1ab_1
-  - pickleshare=0.7.5=pyhd8ed1ab_1004
+  - openssl=3.0.18=hd6dcaed_0
   - pip=25.3=pyhc872135_0
-  - platformdirs=4.5.1=pyhcf101f3_0
-  - prompt-toolkit=3.0.52=pyha770c72_0
-  - psutil=7.2.0=py310h139afa4_0
   - pthread-stubs=0.3=h0ce48e5_1
-  - ptyprocess=0.7.0=pyhd8ed1ab_1
-  - pure_eval=0.2.3=pyhd8ed1ab_1
-  - pygments=2.19.2=pyhd8ed1ab_0
   - python=3.10.19=h6fa692b_0
-  - python-dateutil=2.9.0.post0=pyhe01879c_2
-  - python_abi=3.10=2_cp310
-  - pyzmq=27.1.0=py310h4f33d48_0
   - readline=8.3=hc2a1206_0
   - setuptools=80.9.0=py310h06a4308_0
-  - six=1.17.0=pyhe01879c_1
   - sqlite=3.51.0=h2a70700_0
-  - stack_data=0.6.3=pyhd8ed1ab_1
   - tk=8.6.15=h54e0aa7_0
-  - tornado=6.5.4=py310ha78b2d2_0
-  - traitlets=5.14.3=pyhd8ed1ab_1
-  - typing_extensions=4.15.0=pyhcf101f3_0
-  - wcwidth=0.2.14=pyhd8ed1ab_0
   - wheel=0.45.1=py310h06a4308_0
   - xorg-libx11=1.8.12=h9b100fa_1
   - xorg-libxau=1.0.12=h9b100fa_0
   - xorg-libxdmcp=1.1.5=h9b100fa_0
   - xorg-xorgproto=2024.1=h5eee18b_1
   - xz=5.6.4=h5eee18b_1
-  - zeromq=4.3.5=h387f397_9
   - zlib=1.3.1=hb25bd0a_0
   - pip:
       - accelerate==1.10.1
@@ -104,6 +66,7 @@ dependencies:
       - dnspython==2.8.0
       - einops==0.8.1
       - email-validator==2.3.0
+      - exceptiongroup==1.3.1
       - fastapi==0.127.1
       - fastapi-cli==0.0.20
       - fastapi-cloud-cli==0.8.0
@@ -148,6 +111,7 @@ dependencies:
       - msgpack==1.1.2
       - msgspec==0.20.0
       - multidict==6.7.0
+      - nest-asyncio==1.6.0
       - networkx==3.4.2
       - ninja==1.13.0
       - numba==0.61.2
@@ -180,6 +144,7 @@ dependencies:
       - orjson==3.11.5
       - outlines==0.1.11
       - outlines-core==0.1.26
+      - packaging==25.0
       - pandas==2.3.3
       - partial-json-parser==0.2.1.1.post7
       - pillow==10.4.0
@@ -187,6 +152,7 @@ dependencies:
       - prometheus-fastapi-instrumentator==7.1.0
       - propcache==0.4.1
       - protobuf==6.33.2
+      - psutil==7.2.0
       - py-cpuinfo==9.0.0
       - pycountry==24.6.1
       - pydantic==2.10.6
@@ -194,12 +160,15 @@ dependencies:
       - pydantic-extra-types==2.10.6
       - pydantic-settings==2.12.0
       - pydub==0.25.1
+      - pygments==2.19.2
       - pyparsing==3.3.1
+      - python-dateutil==2.9.0.post0
       - python-dotenv==1.2.1
       - python-json-logger==4.0.0
       - python-multipart==0.0.21
       - pytz==2025.2
       - pyyaml==6.0.3
+      - pyzmq==27.1.0
       - qwen-vl-utils==0.0.14
       - ray==2.53.0
       - referencing==0.37.0
@@ -217,6 +186,7 @@ dependencies:
       - sentencepiece==0.2.1
       - sentry-sdk==2.48.0
       - shellingham==1.5.4
+      - six==1.17.0
       - sniffio==1.3.1
       - starlette==0.50.0
       - sympy==1.14.0
@@ -231,6 +201,7 @@ dependencies:
       - transformers==4.51.3
       - triton==3.3.0
       - typer==0.21.0
+      - typing-extensions==4.15.0
       - typing-inspection==0.4.2
       - tzdata==2025.3
       - urllib3==2.6.2

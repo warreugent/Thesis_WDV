@@ -1,0 +1,63 @@
+{
+  "info": {
+    "timestamp": "2025-12-27 17:08:12",
+    "dataset_name": "apples",
+    "subset_name": "test",
+    "model_name": "rex_omni",
+    "iou_type": "bbox",
+    "num_predicted_bbox": 172,
+    "num_gt_bbox": 161,
+    "num_eval_images": 12,
+    "num_eval_categories": 2
+  },
+  "coco_metrics": {
+    "AP@[.50:.95]": 0.5141588578637182,
+    "AP@0.50": 0.6111894872046798,
+    "AP@0.75": 0.603080817664447,
+    "AP_small": -1.0,
+    "AP_medium": -1.0,
+    "AP_large": 0.5141588578637182,
+    "AR@1": 0.13463480963480962,
+    "AR@10": 0.6066045066045065,
+    "AR@100": 0.6782828282828282,
+    "AR_small": -1.0,
+    "AR_medium": -1.0,
+    "AR_large": 0.6782828282828282
+  },
+  "efficiency_metrics@iou_0.50": {
+    "bbox_additions": 14,
+    "bbox_removals": 25,
+    "precision": 0.8546511627906976,
+    "recall": 0.9130434782608695,
+    "total_annotation_time_s": 202.87560572002548,
+    "annotation_time_per_bbox_s": 1.2600969299380465,
+    "annotation_time_manual_pct": 90.9177815368037,
+    "annotation_time_machine_pct": 9.082218463196298,
+    "total_cost_usd": 0.010394140097856932,
+    "cost_per_bbox_usd": 6.455987638420455e-05
+  },
+  "efficiency_metrics@iou_0.70": {
+    "bbox_additions": 14,
+    "bbox_removals": 25,
+    "precision": 0.8546511627906976,
+    "recall": 0.9130434782608695,
+    "total_annotation_time_s": 202.87560572002548,
+    "annotation_time_per_bbox_s": 1.2600969299380465,
+    "annotation_time_manual_pct": 90.9177815368037,
+    "annotation_time_machine_pct": 9.082218463196298,
+    "total_cost_usd": 0.010394140097856932,
+    "cost_per_bbox_usd": 6.455987638420455e-05
+  },
+  "efficiency_metrics@iou_0.90": {
+    "bbox_additions": 50,
+    "bbox_removals": 61,
+    "precision": 0.6453488372093024,
+    "recall": 0.6894409937888198,
+    "total_annotation_time_s": 473.2356057200255,
+    "annotation_time_per_bbox_s": 2.93935158832314,
+    "annotation_time_manual_pct": 96.10646251099575,
+    "annotation_time_machine_pct": 3.8935374890042453,
+    "total_cost_usd": 0.010394140097856932,
+    "cost_per_bbox_usd": 6.455987638420455e-05
+  }
+}

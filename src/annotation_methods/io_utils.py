@@ -5,15 +5,12 @@ import os
 from datetime import datetime
 import json
 
-
-
-# the print takes a long time so inspect to use a native package or another solution to do this faster
 def retrieve_image_batches(images_folder, batch_size, sample_size=None, random_state=None):
     """
     Yield batches of images directly from a given folder.
 
     Args:
-        images_folder (str | Path): Path to folder containing images (searched recursively).
+        images_folder (str | Path): Path to folder containing images.
         batch_size (int): Number of images per batch.
         sample_size (int, optional): Limit total number of images to sample.
         random_state (int, optional): Seed for reproducible shuffling if needed.
@@ -35,8 +32,6 @@ def retrieve_image_batches(images_folder, batch_size, sample_size=None, random_s
     for i in range(0, len(paths), batch_size):
         batch = paths[i:i + batch_size]
         yield [Image.open(p).convert("RGB").copy() for p in batch], [p.name for p in batch]
-
-
 
 
 def build_results_output_path(output_path, images_folder, model_name):
