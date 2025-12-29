@@ -1,4 +1,4 @@
-path: ../Data/apples/yolo_splits/inst1000
+path: ../../Data/apples/yolo_splits/inst1000
 train: images/train
 val: images/val
 names:

@@ -66,8 +66,8 @@ def write_coco_output(
     num_images,
     num_initial_bbox,
     num_pred_boxes,
-    total_train_time,
-    total_inf_time,
+    machine_training_time_s,
+    total_inference_time_s,
     output_path, 
 ):
     """
@@ -84,8 +84,8 @@ def write_coco_output(
         "num_images": num_images,
         "num_predicted_bbox": num_pred_boxes,
         "num_initial_bbox": num_initial_bbox,
-        "total_training_time_s": total_train_time,
-        "total_inference_time_s": total_inf_time,
+        "machine_training_time_s": machine_training_time_s,
+        "total_inference_time_s": total_inference_time_s,
 
     }
 

@@ -1,4 +1,4 @@
-path: ../Data/tomatoes/yolo_splits/inst250
+path: ../../Data/tomatoes/yolo_splits/inst250
 train: images/train
 val: images/val
 names:

@@ -74,4 +74,3 @@ dependencies:
       - wcwidth==0.2.13
       - yapf==0.40.1
       - zipp==3.19.2
-prefix: /home/warredv/miniconda3/envs/semidetr

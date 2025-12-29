@@ -43,8 +43,9 @@ Models/**/*.[Tt][Ii][Ff]
 Models/**/*.[Tt][Ii][Ff][Ff]
 Models/**/*.[Bb][Mm][Pp]
 
-# Ignore zip archives
+# Ignore zip & tar archives
 *.zip
+*.tar
 
 # Temporary
 tmp/

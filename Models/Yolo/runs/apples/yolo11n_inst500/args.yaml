@@ -1,7 +1,7 @@
 task: detect
 mode: train
 model: yolo11n.pt
-data: ../Data/apples/yolo_splits/inst500/dataset.yaml
+data: ../../Data/apples/yolo_splits/inst500/dataset.yaml
 epochs: 100
 time: null
 patience: 100
@@ -103,4 +103,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: /home/warredv/Thesis_WDV/Yolo/runs/apples/yolo11n_inst500
+save_dir: /home/warredv/Thesis_WDV/Models/Yolo/runs/apples/yolo11n_inst500
