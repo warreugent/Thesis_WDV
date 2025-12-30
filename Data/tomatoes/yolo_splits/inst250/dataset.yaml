@@ -1,5 +1,0 @@
-path: ../../Data/tomatoes/yolo_splits/inst250
-train: images/train
-val: images/val
-names:
-  - tomato

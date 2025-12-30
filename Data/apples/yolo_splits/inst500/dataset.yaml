@@ -1,6 +1,0 @@
-path: ../../Data/apples/yolo_splits/inst500
-train: images/train
-val: images/val
-names:
-  - GoodApple
-  - BadApple

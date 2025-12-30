@@ -2,14 +2,16 @@ from pathlib import Path
 import json
 import random
 from collections import defaultdict
-from dataclasses import dataclass
-from typing import Dict, List, Set, Tuple
+from dataclasses import dataclass, replace
+from typing import Dict, List, Set, Tuple, Union
+
 
 @dataclass(frozen=True)
 class Params:
     budgets: Tuple[int, ...] = (250, 500, 1000)
     val_frac: float = 0.20
     seed: int = 42
+    num_repeats: int = 3
     exclude_iscrowd: bool = True
 
 
@@ -209,7 +211,11 @@ def write_split(out_dir: Path, images_by_id: Dict[int, dict], train: Set[int], v
     (out_dir / "stats.json").write_text(json.dumps(stats, indent=2) + "\n", encoding="utf-8")
 
 
-def make_nested_splits(train_json: str | Path, out_root: str | Path, params: Params = Params()):
+def make_nested_splits(
+    train_json: Union[str, Path],
+    out_root: Union[str, Path],
+    params: Params = Params(),
+) -> None:
     train_json = Path(train_json)
     out_root = Path(out_root)
 
@@ -221,43 +227,77 @@ def make_nested_splits(train_json: str | Path, out_root: str | Path, params: Par
         img_total,
         img_present,
         global_counts,
-        cat_id_to_name,   # NEW
+        cat_id_to_name,
     ) = build_per_image_stats(coco, params.exclude_iscrowd)
 
     img_ids = sorted(images_by_id.keys())
-    pools = build_nested_pools(img_ids, class_ids, img_counts, img_total, img_present, global_counts, params)
 
-    for B, pool in pools.items():
-        pool_class_counts = {cid: 0 for cid in class_ids}
-        pool_total = 0
-        for i in pool:
-            pool_total += img_total[i]
-            for cid, v in img_counts[i].items():
-                pool_class_counts[cid] += v
-        pool_props = {cid: (pool_class_counts[cid] / pool_total) if pool_total else 0.0 for cid in class_ids}
+    for repeat_idx in range(params.num_repeats):
+        # Derive a per-repeat seed
+        repeat_seed = params.seed + repeat_idx
+        repeat_params = replace(params, seed=repeat_seed)
 
-        train, val, train_counts, val_counts = split_pool_train_val(
-            pool, class_ids, img_counts, img_total, img_present, pool_props, params
+        # Build pools for this repeat
+        pools = build_nested_pools(
+            img_ids,
+            class_ids,
+            img_counts,
+            img_total,
+            img_present,
+            global_counts,
+            repeat_params,
         )
 
-        # keep mapping for convenience
-        class_id_to_name_strkey = {str(cid): cat_id_to_name.get(cid, str(cid)) for cid in class_ids}
+        for B, pool in pools.items():
+            pool_class_counts = {cid: 0 for cid in class_ids}
+            pool_total = 0
+            for i in pool:
+                pool_total += img_total[i]
+                for cid, v in img_counts[i].items():
+                    pool_class_counts[cid] += v
+            pool_props = {
+                cid: (pool_class_counts[cid] / pool_total) if pool_total else 0.0
+                for cid in class_ids
+            }
 
-        stats = {
-            "budget_instances_target": B,
-            "budget_instances_actual_pool": int(sum(img_total[i] for i in pool)),
-            "seed": params.seed,
-            "val_frac": params.val_frac,
-            "n_pool_images": len(pool),
-            "n_train_images": len(train),
-            "n_val_images": len(val),
-            "train_instances_total": int(sum(train_counts.values())),
-            "val_instances_total": int(sum(val_counts.values())),
-            "train_instances_per_class": {str(k): int(v) for k, v in train_counts.items()},
-            "val_instances_per_class": {str(k): int(v) for k, v in val_counts.items()},
-            "class_id_to_name": class_id_to_name_strkey,
-        }
+            train, val, train_counts, val_counts = split_pool_train_val(
+                pool,
+                class_ids,
+                img_counts,
+                img_total,
+                img_present,
+                pool_props,
+                repeat_params,
+            )
 
-        write_split(out_root / f"inst{B}", images_by_id, train, val, stats)
+            # keep mapping for convenience
+            class_id_to_name_strkey = {
+                str(cid): cat_id_to_name.get(cid, str(cid)) for cid in class_ids
+            }
+
+            stats = {
+                "budget_instances_target": B,
+                "budget_instances_actual_pool": int(sum(img_total[i] for i in pool)),
+                "seed": repeat_seed,
+                "repeat_idx": repeat_idx,
+                "val_frac": repeat_params.val_frac,
+                "n_pool_images": len(pool),
+                "n_train_images": len(train),
+                "n_val_images": len(val),
+                "train_instances_total": int(sum(train_counts.values())),
+                "val_instances_total": int(sum(val_counts.values())),
+                "train_instances_per_class": {
+                    str(k): int(v) for k, v in train_counts.items()
+                },
+                "val_instances_per_class": {
+                    str(k): int(v) for k, v in val_counts.items()
+                },
+                "class_id_to_name": class_id_to_name_strkey,
+            }
+
+            # flat naming: inst{B}_r{repeat_idx}
+            out_dir = out_root / f"inst{B}_r{repeat_idx}"
+            write_split(out_dir, images_by_id, train, val, stats)
 
     print(f"Wrote splits to: {out_root.resolve()}")
+

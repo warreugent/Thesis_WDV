@@ -1,6 +1,6 @@
 {
   "info": {
-    "timestamp": "2025-12-29 00:21:35",
+    "timestamp": "2025-12-29 14:00:42",
     "dataset_name": "apples",
     "subset_name": "test",
     "model_name": "yolo11n_inst500",

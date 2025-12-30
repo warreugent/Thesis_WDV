@@ -9,7 +9,13 @@ Data/
     |   ├── instances_train.json
     |   └── instances_test.json
     └── yolosplits/             # a folder containing nested train splits at different instance budgets
-        ├── inst 250/
-        ├── inst 500/
-        └── inst 1000/
+        ├── inst 250_r0/        # we repeat the nested split for each budget 3 times (r0, r1, r2)
+        ├── inst 250_r1/
+        ├── inst 250_r2/
+        ├── inst 500_r0/
+        ├── inst 500_r1/
+        ├── inst 500_r2/
+        ├── inst 1000_r0/
+        ├── inst 1000_r1/
+        └── inst 1000_r2/
 ```

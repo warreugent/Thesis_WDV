@@ -1,0 +1,21 @@
+{
+  "budget_instances_target": 500,
+  "budget_instances_actual_pool": 510,
+  "seed": 43,
+  "repeat_idx": 1,
+  "val_frac": 0.2,
+  "n_pool_images": 76,
+  "n_train_images": 59,
+  "n_val_images": 17,
+  "train_instances_total": 405,
+  "val_instances_total": 105,
+  "train_instances_per_class": {
+    "0": 405
+  },
+  "val_instances_per_class": {
+    "0": 105
+  },
+  "class_id_to_name": {
+    "0": "tomato"
+  }
+}

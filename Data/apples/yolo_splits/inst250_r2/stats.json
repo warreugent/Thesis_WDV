@@ -1,0 +1,24 @@
+{
+  "budget_instances_target": 250,
+  "budget_instances_actual_pool": 252,
+  "seed": 44,
+  "repeat_idx": 2,
+  "val_frac": 0.2,
+  "n_pool_images": 19,
+  "n_train_images": 15,
+  "n_val_images": 4,
+  "train_instances_total": 202,
+  "val_instances_total": 50,
+  "train_instances_per_class": {
+    "0": 180,
+    "1": 22
+  },
+  "val_instances_per_class": {
+    "0": 48,
+    "1": 2
+  },
+  "class_id_to_name": {
+    "0": "GoodApple",
+    "1": "BadApple"
+  }
+}
