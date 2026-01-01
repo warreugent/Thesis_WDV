@@ -9,6 +9,7 @@ import time
 import json
 import hashlib
 import numpy as np
+import pandas as pd
 
 from abc import ABC, abstractmethod
 
@@ -41,21 +42,25 @@ def select_model(model_name):
     if model_name == "owlvit_b_32":
         model_id = "google/owlvit-base-patch32"
 
-    if model_name == "owlv2_16_ensemble": # crashes RAM
+    if model_name == "owlv2_16_ensemble": 
         model_id = "owlv2-base-patch16-ensemble"
+
+    if model_name == "owlvit_l_14":
+        model_id = "google/owlvit-large-patch14"
 
     if model_name == "mmgd_t":
         model_id = "openmmlab-community/mm_grounding_dino_tiny_o365v1_goldg_v3det"
 
-    if model_name == "mmgd_b_all": # too big for T4 GPU
+    if model_name == "mmgd_b_all": 
         model_id = "rziga/mm_grounding_dino_base_all"
 
-    if model_name == "mmgd_l_all": # too big for T4 GPU
+    if model_name == "mmgd_l_all": 
         model_id = "rziga/mm_grounding_dino_large_all"
 
     device = infer_device()
     processor = AutoProcessor.from_pretrained(model_id)#, token=os.environ["HF_TOKEN"])
-    model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id)#, token=os.environ["HF_TOKEN"]).to(device)
+    model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id)#, token=os.environ["HF_TOKEN"])
+    model = model.to(device)
 
     return processor, model
 
@@ -228,7 +233,6 @@ class OwlViTBackend(ZeroShotBackend):
 BACKENDS = {
     "grounded_model": GroundedDetBackend(),
     "owl_model": OwlViTBackend(),
-    # ...
 }
 
 # Map all model names from select_model() to a backend identifier.
@@ -237,6 +241,7 @@ MODEL_BACKEND_MAP = {
     "gd_b": "grounded_model",
     "owlvit_b_16": "owl_model",
     "owlvit_b_32": "owl_model",
+    "owlvit_l_14": "owl_model",
     "owlv2_16_ensemble": "owl_model",
     "mmgd_t": "grounded_model",
     "mmgd_b_all": "grounded_model",
@@ -259,8 +264,8 @@ def make_zero_shot_predictions(
     categories_list,
     model_name,
     batch_size,
-    sample_size,
     output_path,
+    sample_size = None,
     threshold = None,
     text_threshold = None,
     random_state=None,
@@ -287,10 +292,10 @@ def make_zero_shot_predictions(
         Model identifier for select_model().
     batch_size : int
         Number of images per batch.
-    sample_size : int
+    sample_size : int, optional
         Total number of images to sample from the folder.
     random_state : int or None, optional
-        Random seed used in `retrieve_image_batches`.
+        Random seed used in `retrieve_image_batches`(if None no random seed is passed).
     threshold : float, optional
         Detection score threshold.
     text_threshold : float, optional
@@ -304,9 +309,7 @@ def make_zero_shot_predictions(
     # -------------------------------------------------------------------------
     processor, model = select_model(model_name)
     model.eval() # set the model in inference mode
-
     use_cuda = (model.device.type == "cuda")
-
     backend = get_backend(model_name)
 
     # Map category name -> category id (0-based)
@@ -329,7 +332,6 @@ def make_zero_shot_predictions(
     num_images = 0
     num_pred_boxes = 0
 
-    warmup_steps = warmup_steps  # number of warmup steps
     first_batch = True
 
     # ------------------------------------------------------------------------- 
@@ -342,6 +344,9 @@ def make_zero_shot_predictions(
             sample_size=sample_size,
             random_state=random_state,
         ):
+            # start timing
+            batch_start = time.perf_counter()
+            warmup_time = 0.0
 
             # 1) model-specific text encoding (once)
             if text_inputs_cache is None:
@@ -350,7 +355,7 @@ def make_zero_shot_predictions(
                     model=model,
                     categories_list=categories_list,
                 )
-
+            
             # 2) common image preprocessing
             inputs = processor(
                 images=batch_images,
@@ -370,19 +375,19 @@ def make_zero_shot_predictions(
 
             # 4) common warmup & inference
             if first_batch:
+                warmup_start = time.perf_counter()
                 for _ in range(warmup_steps):
                     _ = model(**inputs)
                     if use_cuda:
                         torch.cuda.synchronize()
+                warmup_end = time.perf_counter()
+                warmup_time = warmup_end - warmup_start
                 first_batch = False
 
+            # print("len(batch_images):", len(batch_images))
+            # print("pixel_values shape:", inputs["pixel_values"].shape)
+
             # forward
-
-            print("len(batch_images):", len(batch_images))
-            print("pixel_values shape:", inputs["pixel_values"].shape)
-
-
-            start = time.perf_counter()
             outputs = model(**inputs)
 
             # 5) model-specific postprocess
@@ -398,20 +403,15 @@ def make_zero_shot_predictions(
 
             if use_cuda:
                 torch.cuda.synchronize()
-            end = time.perf_counter()
+            batch_end = time.perf_counter()
 
-            total_inference_time_s += (end - start)
+            total_inference_time_s += (batch_end - batch_start - warmup_time)
             num_images += len(batch_images)
 
-            print("OLD make_zero_shot_predictions model.device:", model.device)
-
-            peak_mb = torch.cuda.max_memory_allocated() / 1e6
-            reserved_mb = torch.cuda.memory_reserved() / 1e6
-            print(f"batch={len(batch_images)}  peak={peak_mb:.1f} MB  reserved={reserved_mb:.1f} MB  time={end-start:.4f}s")
-
-
-            # After model call:
-            print("outputs type:", type(outputs))
+            # Debug
+            # peak_mb = torch.cuda.max_memory_allocated() / 1e6
+            # reserved_mb = torch.cuda.memory_reserved() / 1e6
+            # print(f"batch={len(batch_images)}  peak={peak_mb:.1f} MB  reserved={reserved_mb:.1f} MB  time={end-start:.4f}s")
 
 
             # 6) common COCO conversion
@@ -442,6 +442,11 @@ def make_zero_shot_predictions(
                     annotations=annotations,
                 )
 
+            # debug
+            # del outputs, results, inputs
+            # if use_cuda:
+            #     torch.cuda.empty_cache()
+
     # -------------------------------------------------------------------------
     # Write COCO JSON and log path
     # -------------------------------------------------------------------------
@@ -469,7 +474,7 @@ def benchmark_batch_size(
     model_name,
     batch_size,
     sample_size,
-    random_state=0,
+    random_state=None,
     threshold=None,
     text_threshold=None,
     warmup_steps=1,
@@ -479,6 +484,7 @@ def benchmark_batch_size(
       - prints CUDA / device info
       - processes `sample_size` images
       - reports throughput and peak GPU memory
+      - returns a flag if CUDA OOM occurred
     """
 
     # -------------------------------------------------------------------------
@@ -492,24 +498,10 @@ def benchmark_batch_size(
     # Device checks
     # -------------------------------------------------------------------------
     print("torch.cuda.is_available():", torch.cuda.is_available())
-    if torch.cuda.is_available():
-        print("CUDA device count:", torch.cuda.device_count())
-        print("current CUDA device index:", torch.cuda.current_device())
-    else:
+    if not torch.cuda.is_available():
         print("No CUDA available, running on CPU")
 
-    # Ensure model is on CUDA if available
-    if torch.cuda.is_available() and getattr(model, "device", None) is not None:
-        if model.device.type != "cuda":
-            model = model.to("cuda")
-    elif torch.cuda.is_available() and not hasattr(model, "device"):
-        # If model has no .device attribute, force to cuda:0
-        model = model.to("cuda:0")
-
-    # Fallback: if still no 'device' attribute, assume CPU
     model_device = getattr(model, "device", torch.device("cpu"))
-    print("model.device:", model_device)
-
     use_cuda = (model_device.type == "cuda")
 
     # -------------------------------------------------------------------------
@@ -530,6 +522,7 @@ def benchmark_batch_size(
     num_images = 0
     total_inference_time_s = 0.0
     first_batch = True
+    oom = False
 
     # -------------------------------------------------------------------------
     # Main loop
@@ -545,57 +538,73 @@ def benchmark_batch_size(
             if batch_size_actual == 0:
                 continue
 
-            # 1) Text cache (once)
-            if text_inputs_cache is None:
-                text_inputs_cache, text_labels, label_mapping = backend.build_text_inputs_cache(
-                    processor=processor,
-                    model=model,
-                    categories_list=categories_list,
+            try:
+                # 1) Text cache (once)
+                if text_inputs_cache is None:
+                    text_inputs_cache, text_labels, label_mapping = backend.build_text_inputs_cache(
+                        processor=processor,
+                        model=model,
+                        categories_list=categories_list,
+                    )
+
+                # 2) Preprocess images
+                inputs = processor(
+                    images=batch_images,
+                    return_tensors="pt",
+                    padding=True,
                 )
 
-            # 2) Preprocess images
-            inputs = processor(
-                images=batch_images,
-                return_tensors="pt",
-                padding=True,
-            )
+                # Let backend attach text inputs, move to device, etc.
+                inputs = backend.build_batch_inputs(
+                    model=model,
+                    batch_size_actual=batch_size_actual,
+                    text_inputs_cache=text_inputs_cache,
+                    inputs=inputs,
+                )
 
-            # Let backend attach text inputs, move to device, etc.
-            inputs = backend.build_batch_inputs(
-                model=model,
-                batch_size_actual=batch_size_actual,
-                text_inputs_cache=text_inputs_cache,
-                inputs=inputs,
-            )
+                # Optional warmup on the first batch (included in peak memory)
+                if first_batch and warmup_steps > 0:
+                    for _ in range(warmup_steps):
+                        _ = model(**inputs)
+                        if use_cuda:
+                            torch.cuda.synchronize(model_device)
+                    first_batch = False
 
-            # Optional warmup on the first batch (included in peak memory)
-            if first_batch and warmup_steps > 0:
-                for _ in range(warmup_steps):
-                    _ = model(**inputs)
+                # 3) Timed forward + postprocess
+                start = time.perf_counter()
+                outputs = model(**inputs)
+
+                results = backend.postprocess(
+                    processor=processor,
+                    outputs=outputs,
+                    inputs=inputs,
+                    batch_images=batch_images,
+                    text_labels=text_labels,
+                    threshold=threshold,
+                    text_threshold=text_threshold,
+                )
+
+                if use_cuda:
+                    torch.cuda.synchronize(model_device)
+                end = time.perf_counter()
+
+                total_inference_time_s += (end - start)
+                num_images += batch_size_actual
+
+            except RuntimeError as e:
+                if "CUDA out of memory" in str(e):
+                    print(
+                        f"CUDA OOM at batch_size={batch_size} "
+                        f"(processed {num_images} images so far)"
+                    )
+                    oom = True
                     if use_cuda:
+                        torch.cuda.empty_cache()
                         torch.cuda.synchronize(model_device)
-                first_batch = False
-
-            # 3) Timed forward + postprocess
-            start = time.perf_counter()
-            outputs = model(**inputs)
-
-            results = backend.postprocess(
-                processor=processor,
-                outputs=outputs,
-                inputs=inputs,
-                batch_images=batch_images,
-                text_labels=text_labels,
-                threshold=threshold,
-                text_threshold=text_threshold,
-            )
-
-            if use_cuda:
-                torch.cuda.synchronize(model_device)
-            end = time.perf_counter()
-
-            total_inference_time_s += (end - start)
-            num_images += batch_size_actual
+                    break
+                else:
+                    # Re-raise non-OOM errors
+                    raise
 
     # -------------------------------------------------------------------------
     # Throughput and peak memory
@@ -616,221 +625,20 @@ def benchmark_batch_size(
         f"images={num_images} | "
         f"time={total_inference_time_s:.2f}s | "
         f"throughput={images_per_second:.2f} img/s | "
-        f"peak_mem={peak_mb:.1f} MB"
+        f"peak_mem={peak_mb:.1f} MB | "
+        f"oom={oom}"
     )
 
-    return {
+    metrics = {
+        "model": model_name,
         "batch_size": batch_size,
         "num_images": num_images,
         "total_time_s": total_inference_time_s,
         "images_per_second": images_per_second,
         "peak_mem_mb": peak_mb,
-    }
+        "oom": oom,
+}
 
+    df = pd.DataFrame([metrics])
+    return metrics, df
 
-# def make_zero_shot_predictions(
-#     images_folder,
-#     categories_list,
-#     model_name,
-#     batch_size,
-#     sample_size,
-#     output_path,
-#     threshold = None,
-#     text_threshold = None,
-#     random_state=None,
-#     warmup_steps = 1,
-# ):
-#     """
-#     Run zero-shot object detection and export results in COCO format.
-#     """
-
-#     # -------------------------------------------------------------------------
-#     # Setup
-#     # -------------------------------------------------------------------------
-#     processor, model = select_model(model_name)
-#     model.eval()  # set the model in inference mode
-
-#     # Device / CUDA checks
-#     print("torch.cuda.is_available():", torch.cuda.is_available())
-#     if torch.cuda.is_available():
-#         print("CUDA device count:", torch.cuda.device_count())
-#         print("current CUDA device index:", torch.cuda.current_device())
-#     else:
-#         print("No CUDA available, running on CPU")
-
-#     # If your select_model already moves the model to CUDA, you might not need this.
-#     # Keeping it defensive:
-#     if torch.cuda.is_available():
-#         if getattr(model, "device", None) is not None:
-#             if model.device.type != "cuda":
-#                 model = model.to("cuda")
-#         else:
-#             model = model.to("cuda:0")
-
-#     model_device = getattr(model, "device", torch.device("cpu"))
-#     print("model.device:", model_device)
-
-#     use_cuda = (model_device.type == "cuda")
-
-#     backend = get_backend(model_name)
-
-#     # Map category name -> category id (0-based)
-#     categories_dict = {name: i for i, name in enumerate(categories_list)}
-
-#     images = []
-#     annotations = []
-
-#     def image_id_from_name(name: str) -> int:
-#         """Stable integer id derived from the image filename."""
-#         return int(hashlib.md5(name.encode()).hexdigest()[:8], 16)
-
-#     # Labels used for the text encoder
-#     text_inputs_cache  = None  # filled the first time we see a batch
-#     label_mapping = None       # some backends need a specific mapping of labels that differs from categories_list
-
-#     # Simple timing and counting variables
-#     total_inference_time_s = 0.0
-#     num_images = 0
-#     num_pred_boxes = 0
-
-#     warmup_steps = warmup_steps  # number of warmup steps
-#     first_batch = True
-
-#     # -------------------------------------------------------------------------
-#     # Reset CUDA peak memory stats for the WHOLE run (nr3)
-#     # -------------------------------------------------------------------------
-#     if use_cuda:
-#         torch.cuda.empty_cache()
-#         torch.cuda.reset_peak_memory_stats(model_device)
-#         torch.cuda.synchronize(model_device)
-
-#     # ------------------------------------------------------------------------- 
-#     # Main loop: iterate over image batches 
-#     # ------------------------------------------------------------------------- 
-#     with torch.inference_mode():
-#         for batch_images, names in retrieve_image_batches(
-#             images_folder=images_folder,
-#             batch_size=batch_size,
-#             sample_size=sample_size,
-#             random_state=random_state,
-#         ):
-
-#             # 1) model-specific text encoding (once)
-#             if text_inputs_cache is None:
-#                 text_inputs_cache, text_labels, label_mapping = backend.build_text_inputs_cache(
-#                     processor=processor,
-#                     model=model,
-#                     categories_list=categories_list,
-#                 )
-
-#             # 2) common image preprocessing
-#             inputs = processor(
-#                 images=batch_images,
-#                 return_tensors="pt",
-#                 padding=True,
-#             )
-
-#             batch_size_actual = len(batch_images)
-
-#             # 3) model-specific addition of cached text encoding
-#             inputs = backend.build_batch_inputs(
-#                 model=model,
-#                 batch_size_actual=batch_size_actual,
-#                 text_inputs_cache=text_inputs_cache,
-#                 inputs=inputs,
-#             )
-
-#             # 4) common warmup & inference
-#             if first_batch:
-#                 for _ in range(warmup_steps):
-#                     _ = model(**inputs)
-#                     if use_cuda:
-#                         torch.cuda.synchronize(model_device)
-#                 first_batch = False
-
-#             # forward + postprocess are what you time (unchanged)
-#             start = time.perf_counter()
-#             outputs = model(**inputs)
-
-#             # 5) model-specific postprocess
-#             results = backend.postprocess(
-#                 processor=processor,
-#                 outputs=outputs,
-#                 inputs=inputs,
-#                 batch_images=batch_images,
-#                 text_labels=text_labels,
-#                 threshold=threshold,
-#                 text_threshold=text_threshold,
-#             )
-
-#             if use_cuda:
-#                 torch.cuda.synchronize(model_device)
-#             end = time.perf_counter()
-
-#             total_inference_time_s += (end - start)
-#             num_images += len(batch_images)
-
-#             # 6) common COCO conversion
-#             for name, res, im in zip(names, results, batch_images):
-#                 img_id = image_id_from_name(name)
-#                 H, W = im.height, im.width
-
-#                 images.append({
-#                     "id": img_id,
-#                     "file_name": f"images/test/{name}",
-#                 })
-
-#                 boxes = res["boxes"].tolist()
-#                 scores = res["scores"].tolist()
-#                 labels = res.get("text_labels", [])
-
-#                 # Remap labels
-#                 remapped_labels = [label_mapping.get(l, l) for l in labels]
-
-#                 num_pred_boxes += process_prediction_boxes(
-#                     boxes=boxes,
-#                     scores=scores,
-#                     labels=remapped_labels,
-#                     img_id=img_id,
-#                     img_h=H,
-#                     img_w=W,
-#                     categories_dict=categories_dict,
-#                     annotations=annotations,
-#                 )
-
-#     # -------------------------------------------------------------------------
-#     # Peak GPU memory over the whole run
-#     # -------------------------------------------------------------------------
-#     if use_cuda:
-#         peak_bytes = torch.cuda.max_memory_allocated(model_device)
-#         peak_mb = peak_bytes / 1e6
-#         print(f"Peak GPU memory over run: {peak_mb:.1f} MB")
-#     else:
-#         print("Peak GPU memory: 0.0 MB (CPU run)")
-
-#     # Optional: throughput log
-#     if total_inference_time_s > 0:
-#         images_per_second = num_images / total_inference_time_s
-#         print(
-#             f"Processed {num_images} images in {total_inference_time_s:.2f}s "
-#             f"({images_per_second:.2f} images/s)"
-#         )
-
-#     # -------------------------------------------------------------------------
-#     # Write COCO JSON and log path (unchanged)
-#     # -------------------------------------------------------------------------
-#     out_file = write_coco_output(
-#         images_folder=images_folder,
-#         model_name=model_name,
-#         categories_list=categories_list,
-#         images=images,
-#         annotations=annotations,
-#         num_images=num_images,
-#         output_path=output_path,
-#         num_initial_bbox = 0,  # zero-shot has no initial boxes
-#         num_pred_boxes=num_pred_boxes,
-#         total_inference_time_s=total_inference_time_s,
-#         machine_training_time_s=0.0,  # zero-shot requires no training time
-#     )
-
-#     print(f"Wrote COCO-format JSON to {out_file}")
