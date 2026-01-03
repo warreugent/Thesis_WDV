@@ -603,3 +603,65 @@ def benchmark_batch_size(
     df = pd.DataFrame([metrics])
     return metrics, df
 
+def make_zero_shot_predictions_minimal(
+    images_folder,
+    categories_list,
+    model_name,
+    batch_size,
+    sample_size=None,
+    random_state=None,
+):
+    processor, model = select_model(model_name)
+    model.eval()
+    use_cuda = (model.device.type == "cuda")
+    backend = get_backend(model_name)
+
+    text_inputs_cache = None
+    first_batch = True
+
+    with torch.inference_mode():
+        for batch_images, names in retrieve_image_batches(
+            images_folder=images_folder,
+            batch_size=batch_size,
+            sample_size=sample_size,
+            random_state=random_state,
+        ):
+            # Build text inputs once
+            if text_inputs_cache is None:
+                text_inputs_cache, text_labels, label_mapping = backend.build_text_inputs_cache(
+                    processor=processor,
+                    model=model,
+                    categories_list=categories_list,
+                )
+
+            # --- Print original image sizes ---
+            orig_sizes = [(im.width, im.height) for im in batch_images]
+            print("Original sizes:", orig_sizes)
+
+            # Preprocess (this performs resizing)
+            inputs = processor(
+                images=batch_images,
+                return_tensors="pt",
+                padding=True,
+            )
+
+            # --- Print processed tensor sizes ---
+            # shape: (B, C, H, W)
+            tensor_shape = tuple(inputs["pixel_values"].shape)
+            print("Processed tensor shape:", tensor_shape)
+
+            # Add cached text embeddings
+            inputs = backend.build_batch_inputs(
+                model=model,
+                batch_size_actual=len(batch_images),
+                text_inputs_cache=text_inputs_cache,
+                inputs=inputs,
+            )
+
+            # Forward pass only
+            outputs = model(**inputs)
+            if use_cuda:
+                torch.cuda.synchronize()
+
+            # Stop after first batch if only probing resizing behavior
+            break

@@ -1,12 +1,12 @@
 {
   "info": {
     "description": "Predictions on ../../Data/apples/images/test with gd_b",
-    "date_created": "2025-12-30 00:00:58",
+    "date_created": "2026-01-03 14:50:07",
     "num_images": 31,
     "num_predicted_bbox": 8,
     "num_initial_bbox": 0,
     "machine_training_time_s": 0.0,
-    "total_inference_time_s": 6.133047160925344
+    "total_inference_time_s": 7.699665072141215
   },
   "images": [
     {
@@ -241,5 +241,18 @@
       "id": 1,
       "name": "bad apple"
     }
-  ]
+  ],
+  "batch_info": {
+    "batch_size": 4,
+    "batch_times_s": [
+      1.0388786690309644,
+      0.9924998718779534,
+      0.9865152491256595,
+      0.9859239179641008,
+      0.9877687520347536,
+      0.9862601940985769,
+      0.9839886319823563,
+      0.7378297860268503
+    ]
+  }
 }

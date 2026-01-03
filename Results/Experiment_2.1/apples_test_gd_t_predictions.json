@@ -1,12 +1,12 @@
 {
   "info": {
     "description": "Predictions on ../../Data/apples/images/test with gd_t",
-    "date_created": "2025-12-30 15:30:07",
-    "num_images": 10,
-    "num_predicted_bbox": 0,
+    "date_created": "2026-01-03 14:58:21",
+    "num_images": 31,
+    "num_predicted_bbox": 1,
     "num_initial_bbox": 0,
     "machine_training_time_s": 0.0,
-    "total_inference_time_s": 1.9358572429046035
+    "total_inference_time_s": 5.825054785003886
   },
   "images": [
     {
@@ -48,9 +48,106 @@
     {
       "id": 615254373,
       "file_name": "images/test/IMG_0397.png"
+    },
+    {
+      "id": 2255902374,
+      "file_name": "images/test/IMG_0372.png"
+    },
+    {
+      "id": 3911949484,
+      "file_name": "images/test/IMG_0416.png"
+    },
+    {
+      "id": 4242254710,
+      "file_name": "images/test/IMG_0307.png"
+    },
+    {
+      "id": 2344637063,
+      "file_name": "images/test/IMG_0345.png"
+    },
+    {
+      "id": 3082329859,
+      "file_name": "images/test/IMG_0359.png"
+    },
+    {
+      "id": 922661213,
+      "file_name": "images/test/IMG_0439.png"
+    },
+    {
+      "id": 2188436648,
+      "file_name": "images/test/IMG_0402.png"
+    },
+    {
+      "id": 331946338,
+      "file_name": "images/test/IMG_0326.png"
+    },
+    {
+      "id": 3120739499,
+      "file_name": "images/test/IMG_0337.png"
+    },
+    {
+      "id": 207844136,
+      "file_name": "images/test/IMG_0362.png"
+    },
+    {
+      "id": 1051394806,
+      "file_name": "images/test/IMG_0399.png"
+    },
+    {
+      "id": 3404218154,
+      "file_name": "images/test/IMG_0360.png"
+    },
+    {
+      "id": 943827453,
+      "file_name": "images/test/IMG_0379.png"
+    },
+    {
+      "id": 1778455897,
+      "file_name": "images/test/IMG_0437.png"
+    },
+    {
+      "id": 4085732537,
+      "file_name": "images/test/IMG_0432.png"
+    },
+    {
+      "id": 3349739303,
+      "file_name": "images/test/IMG_0371.png"
+    },
+    {
+      "id": 2183984243,
+      "file_name": "images/test/IMG_0364.png"
+    },
+    {
+      "id": 2912131398,
+      "file_name": "images/test/IMG_0302.png"
+    },
+    {
+      "id": 3697572337,
+      "file_name": "images/test/IMG_0436.png"
+    },
+    {
+      "id": 3673538920,
+      "file_name": "images/test/IMG_0393.png"
+    },
+    {
+      "id": 181797213,
+      "file_name": "images/test/IMG_0419.png"
     }
   ],
-  "annotations": [],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 943827453,
+      "category_id": 0,
+      "bbox": [
+        1585.377685546875,
+        1254.0931396484375,
+        280.72607421875,
+        250.1405029296875
+      ],
+      "score": 0.2601222097873688
+    }
+  ],
   "categories": [
     {
       "id": 0,
@@ -60,5 +157,18 @@
       "id": 1,
       "name": "bad apple"
     }
-  ]
+  ],
+  "batch_info": {
+    "batch_size": 4,
+    "batch_times_s": [
+      0.7485719418618828,
+      0.7520103880669922,
+      0.7538580331020057,
+      0.7514933978673071,
+      0.7506092011462897,
+      0.7509941579774022,
+      0.750464249169454,
+      0.567053415812552
+    ]
+  }
 }
