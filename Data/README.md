@@ -1,7 +1,7 @@
 ## Data Structure
 ```
 Data/
-└── data_folder/
+└── data_folder/                            
     ├── images/                             # Images split in train and test set
     |   ├── train/
     |   └── test/
