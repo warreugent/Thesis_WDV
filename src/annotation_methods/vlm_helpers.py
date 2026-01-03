@@ -603,6 +603,8 @@ def benchmark_batch_size(
     df = pd.DataFrame([metrics])
     return metrics, df
 
+from inspect import signature
+
 def make_zero_shot_predictions_minimal(
     images_folder,
     categories_list,
@@ -617,7 +619,16 @@ def make_zero_shot_predictions_minimal(
     backend = get_backend(model_name)
 
     text_inputs_cache = None
-    first_batch = True
+
+    # --- Inspect and print true postprocess defaults ---
+    fn = processor.post_process_grounded_object_detection
+    sig = signature(fn)
+    print("post_process_grounded_object_detection defaults:")
+    for name, param in sig.parameters.items():
+        if param.default is not param.empty:
+            print(f"  {name} = {param.default}")
+        else:
+            print(f"  {name} = <required>")
 
     with torch.inference_mode():
         for batch_images, names in retrieve_image_batches(
@@ -638,7 +649,7 @@ def make_zero_shot_predictions_minimal(
             orig_sizes = [(im.width, im.height) for im in batch_images]
             print("Original sizes:", orig_sizes)
 
-            # Preprocess (this performs resizing)
+            # Preprocess (resizing + normalization)
             inputs = processor(
                 images=batch_images,
                 return_tensors="pt",
@@ -646,8 +657,7 @@ def make_zero_shot_predictions_minimal(
             )
 
             # --- Print processed tensor sizes ---
-            # shape: (B, C, H, W)
-            tensor_shape = tuple(inputs["pixel_values"].shape)
+            tensor_shape = tuple(inputs["pixel_values"].shape)  # (B, C, H, W)
             print("Processed tensor shape:", tensor_shape)
 
             # Add cached text embeddings
@@ -663,5 +673,6 @@ def make_zero_shot_predictions_minimal(
             if use_cuda:
                 torch.cuda.synchronize()
 
-            # Stop after first batch if only probing resizing behavior
+            # Stop after first batch (probing only)
             break
+
