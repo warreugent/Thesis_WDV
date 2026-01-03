@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import random
+import statistics
 from PIL import Image
 from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection, infer_device
 import torch
@@ -270,45 +271,16 @@ def make_zero_shot_predictions(
     text_threshold = None,
     random_state=None,
     warmup_steps = 1,
-
 ):
     """
     Run zero-shot object detection and export results in COCO format.
-
-    This function:
-      1. Loads a model and processor via `select_model(model_name)`.
-      2. Iterates over images in `images_folder` in batches.
-      3. Runs zero-shot detection.
-      4. Collects predictions into COCO-style structures.
-      5. Calls `write_coco_output` to write a JSON file to the output_path.
-
-    Parameters
-    ----------
-    images_folder : str
-        Folder containing images.
-    categories_list : list[str]
-        Class names (e.g. ["cat", "dog", "person"]).
-    model_name : str
-        Model identifier for select_model().
-    batch_size : int
-        Number of images per batch.
-    sample_size : int, optional
-        Total number of images to sample from the folder.
-    random_state : int or None, optional
-        Random seed used in `retrieve_image_batches`(if None no random seed is passed).
-    threshold : float, optional
-        Detection score threshold.
-    text_threshold : float, optional
-        Text matching threshold for the grounded detection head.
-    warmup_steps : int, optional
-        Pass how many batches should be processed to warmup the kernel (default = 1)
     """
 
     # -------------------------------------------------------------------------
     # Setup
     # -------------------------------------------------------------------------
     processor, model = select_model(model_name)
-    model.eval() # set the model in inference mode
+    model.eval()  # set the model in inference mode
     use_cuda = (model.device.type == "cuda")
     backend = get_backend(model_name)
 
@@ -326,17 +298,16 @@ def make_zero_shot_predictions(
     text_inputs_cache  = None  # filled the first time we see a batch
     label_mapping = None       # some backends need a specific mapping of labels that differs from categories_list
 
-
-    # Simple timing and counting variables
+    # Timing and counting variables
     total_inference_time_s = 0.0
+    batch_times_s: list[float] = []  # per-batch times (minus warmup)
     num_images = 0
     num_pred_boxes = 0
-
     first_batch = True
 
-    # ------------------------------------------------------------------------- 
-    # Main loop: iterate over image batches 
-    # ------------------------------------------------------------------------- 
+    # -------------------------------------------------------------------------
+    # Main loop: iterate over image batches
+    # -------------------------------------------------------------------------
     with torch.inference_mode():
         for batch_images, names in retrieve_image_batches(
             images_folder=images_folder,
@@ -344,7 +315,6 @@ def make_zero_shot_predictions(
             sample_size=sample_size,
             random_state=random_state,
         ):
-            # start timing
             batch_start = time.perf_counter()
             warmup_time = 0.0
 
@@ -355,7 +325,7 @@ def make_zero_shot_predictions(
                     model=model,
                     categories_list=categories_list,
                 )
-            
+
             # 2) common image preprocessing
             inputs = processor(
                 images=batch_images,
@@ -384,9 +354,6 @@ def make_zero_shot_predictions(
                 warmup_time = warmup_end - warmup_start
                 first_batch = False
 
-            # print("len(batch_images):", len(batch_images))
-            # print("pixel_values shape:", inputs["pixel_values"].shape)
-
             # forward
             outputs = model(**inputs)
 
@@ -405,14 +372,11 @@ def make_zero_shot_predictions(
                 torch.cuda.synchronize()
             batch_end = time.perf_counter()
 
-            total_inference_time_s += (batch_end - batch_start - warmup_time)
+            # Per-batch inference time (same definition as total_inference_time_s)
+            batch_inference_time = batch_end - batch_start - warmup_time
+            total_inference_time_s += batch_inference_time
+            batch_times_s.append(batch_inference_time)
             num_images += len(batch_images)
-
-            # Debug
-            # peak_mb = torch.cuda.max_memory_allocated() / 1e6
-            # reserved_mb = torch.cuda.memory_reserved() / 1e6
-            # print(f"batch={len(batch_images)}  peak={peak_mb:.1f} MB  reserved={reserved_mb:.1f} MB  time={end-start:.4f}s")
-
 
             # 6) common COCO conversion
             for name, res, im in zip(names, results, batch_images):
@@ -442,11 +406,6 @@ def make_zero_shot_predictions(
                     annotations=annotations,
                 )
 
-            # debug
-            # del outputs, results, inputs
-            # if use_cuda:
-            #     torch.cuda.empty_cache()
-
     # -------------------------------------------------------------------------
     # Write COCO JSON and log path
     # -------------------------------------------------------------------------
@@ -458,14 +417,16 @@ def make_zero_shot_predictions(
         annotations=annotations,
         num_images=num_images,
         output_path=output_path,
-        num_initial_bbox = 0, # zero-shot has no initial boxes
+        num_initial_bbox=0,  # zero-shot has no initial boxes
         num_pred_boxes=num_pred_boxes,
         total_inference_time_s=total_inference_time_s,
         machine_training_time_s=0.0,  # zero-shot requires no training time
+        batch_times_s=batch_times_s,
+        batch_size=batch_size,
     )
 
     print(f"Wrote COCO-format JSON to {out_file}")
-
+    return out_file
 
 
 def benchmark_batch_size(

@@ -69,6 +69,9 @@ def write_coco_output(
     machine_training_time_s,
     total_inference_time_s,
     output_path, 
+    batch_times_s = None,
+    batch_size = None,
+
 ):
     """
     Write prediction results and metadata to a COCO-format JSON file.
@@ -86,7 +89,6 @@ def write_coco_output(
         "num_initial_bbox": num_initial_bbox,
         "machine_training_time_s": machine_training_time_s,
         "total_inference_time_s": total_inference_time_s,
-
     }
 
     categories = [{"id": i, "name": name} for i, name in enumerate(categories_list)]
@@ -97,6 +99,11 @@ def write_coco_output(
         "annotations": annotations,
         "categories": categories,
     }
+    if batch_times_s is not None or batch_size is not None:
+        coco_output["batch_info"] = {
+            "batch_size": batch_size,
+            "batch_times_s": batch_times_s,
+        }
 
     out_file = build_results_output_path(output_path, images_folder, model_name)
     with open(out_file, "w", encoding="utf-8") as f:

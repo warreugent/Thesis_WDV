@@ -7,6 +7,7 @@ from collections import defaultdict
 from collections.abc import Sequence
 from typing import Union, Dict, List, Set, Tuple
 from ultralytics import YOLO
+import torch
 import random
 from dataclasses import dataclass
 import time
@@ -287,25 +288,37 @@ def train_yolo_model(
 
     project_dir = runs_dir / dataset
 
-    # derive model base name from weights (e.g. "yolo11s" from "yolo11s.pt")
-    model_base = Path(model_weights).stem  # "yolo11s"
+    # derive model base name from weights (e.g. "yolo11m" from "yolo11m.pt")
+    model_base = Path(model_weights).stem  # "yolo11m"
     num_instances_repeat = split_path.name.replace("inst", "")  # e.g. "250_r0"
     model_name = f"{model_base}_inst{num_instances_repeat}"
+
+    # delete old run if it exists
+    model_dir = project_dir / model_name
+    if model_dir.exists():
+        shutil.rmtree(model_dir)
 
     # ---- Load model ----
     model = YOLO(model_weights)
 
     # ---- Train and time ----
+    torch.cuda.synchronize()          # wait for any prior GPU work
     start = time.perf_counter()
+
     train_results = model.train(
         data=str(data_yaml_path),
         epochs=100,
+        patience=30,
         imgsz=640,
         device="cuda",
+        exist_ok=True,
         project=str(project_dir),
         name=model_name,
     )
+
+    torch.cuda.synchronize()          # wait for training to finish
     end = time.perf_counter()
+
     machine_training_time_s = end - start
 
     # ---- Read stats.json if available ----
@@ -385,7 +398,7 @@ def run_inference(
         warmup_images = []
         for ext in ("*.jpg", "*.jpeg", "*.png", "*.bmp"):
             warmup_images.extend(test_images_path.glob(ext))
-        warmup_images = warmup_images[:4] #take the first 4
+        warmup_images = warmup_images[:16] #take the first 16
 
         model.predict(
             source=[str(p) for p in warmup_images],
@@ -396,7 +409,9 @@ def run_inference(
         )
 
     # ---- run inference ----
+    torch.cuda.synchronize()              # ensure no prior GPU work is pending
     start = time.perf_counter()
+
     model.predict(
         source=str(test_images_path),
         save=False,
@@ -406,7 +421,10 @@ def run_inference(
         name=experiment_name,
         exist_ok=True,
     )
+
+    torch.cuda.synchronize()              # wait until inference is fully finished
     total_inference_time_s = time.perf_counter() - start
+
 
     # ---- read training info ----
     with training_info_path.open("r") as f:
@@ -472,12 +490,8 @@ def yolo_pred_txt_to_coco_results(
     img_id = 1
     num_pred_boxes = 0
 
-    for txt in sorted(yolo_labels_path.glob("*.txt")):
-        stem = txt.stem
-        img_path = img_index.get(stem)
-        if img_path is None:
-            continue
-
+    # Loop over all images (so even images without predictions are included)
+    for stem, img_path in sorted(img_index.items()):
         im = cv2.imread(str(img_path))
         if im is None:
             continue
@@ -492,38 +506,41 @@ def yolo_pred_txt_to_coco_results(
             }
         )
 
-        with txt.open("r", encoding="utf-8") as f:
-            for line in f:
-                parts = line.strip().split()
-                if not parts:
-                    continue
+        # Corresponding YOLO txt file (may or may not exist)
+        txt = yolo_labels_path / f"{stem}.txt"
+        if txt.exists():
+            with txt.open("r", encoding="utf-8") as f:
+                for line in f:
+                    parts = line.strip().split()
+                    if not parts:
+                        continue
 
-                cls = int(float(parts[0]))
-                xc, yc, bw, bh = map(float, parts[1:5])
-                conf = float(parts[5]) if (has_conf and len(parts) >= 6) else 1.0
+                    cls = int(float(parts[0]))
+                    xc, yc, bw, bh = map(float, parts[1:5])
+                    conf = float(parts[5]) if (has_conf and len(parts) >= 6) else 1.0
 
-                if is_xywh_normalized:
-                    xc *= w
-                    yc *= h
-                    bw *= w
-                    bh *= h
+                    if is_xywh_normalized:
+                        xc *= w
+                        yc *= h
+                        bw *= w
+                        bh *= h
 
-                x = xc - bw / 2.0
-                y = yc - bh / 2.0
+                    x = xc - bw / 2.0
+                    y = yc - bh / 2.0
 
-                coco_cat = cls  # assuming 0-based indexing
+                    coco_cat = cls  # assuming 0-based indexing
 
-                annotations.append(
-                    {
-                        "id": ann_id,
-                        "image_id": img_id,
-                        "category_id": int(coco_cat),
-                        "bbox": [float(x), float(y), float(bw), float(bh)],
-                        "score": float(conf),
-                    }
-                )
-                ann_id += 1
-                num_pred_boxes += 1
+                    annotations.append(
+                        {
+                            "id": ann_id,
+                            "image_id": img_id,
+                            "category_id": int(coco_cat),
+                            "bbox": [float(x), float(y), float(bw), float(bh)],
+                            "score": float(conf),
+                        }
+                    )
+                    ann_id += 1
+                    num_pred_boxes += 1
 
         img_id += 1
 
@@ -541,7 +558,7 @@ def yolo_pred_txt_to_coco_results(
         categories_list=categories_list,
         images=images,
         annotations=annotations,
-        num_images=len(images),
+        num_images=len(images),  # all test images with or without predictions
         num_initial_bbox=num_initial_bbox,
         num_pred_boxes=num_pred_boxes,
         machine_training_time_s=machine_training_time_s,

@@ -1,5 +1,5 @@
 {
-  "total_inference_time_s": 2.887728603091091,
-  "machine_training_time_s": 196.42962909699418,
+  "total_inference_time_s": 2.9269191611092538,
+  "machine_training_time_s": 83.45040395110846,
   "num_initial_bbox": 1003
 }
