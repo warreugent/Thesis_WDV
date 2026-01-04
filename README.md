@@ -1,6 +1,7 @@
 # Project Overview
 
-This repository contains the code, datasets, environments, and experimental outputs for the project. It is organized by purpose to support clarity and reproducibility.
+This repository contains the code, environments, and experimental outputs for the project (datasets are not shared). It is organized by purpose to support clarity and reproducibility.
+
 
 ## Contents
 
@@ -112,7 +113,10 @@ The `Evaluations/` directory contains JSON log files with evaluation statistics 
 Filenames follow the pattern:
 
 ```text
-{dataset}_{split}_{model-and-repeat}_evaluation.json
+{dataset}_{split}_{model(-and-repeat)}_evaluation.json
+
+apples_test_rexomni_transformers_r0_evaluation.json
+
 ```
 
 For example:

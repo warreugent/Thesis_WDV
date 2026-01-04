@@ -1,12 +1,12 @@
 {
   "info": {
     "description": "Predictions on ../../Data/apples/images/test with yolo11m_inst500_r2",
-    "date_created": "2026-01-02 10:09:51",
+    "date_created": "2026-01-04 01:55:10",
     "num_images": 31,
     "num_predicted_bbox": 422,
     "num_initial_bbox": 515,
-    "machine_training_time_s": 95.82801435398869,
-    "total_inference_time_s": 2.937799582025036
+    "machine_training_time_s": 95.71532771596685,
+    "total_inference_time_s": 2.919149377150461
   },
   "images": [
     {

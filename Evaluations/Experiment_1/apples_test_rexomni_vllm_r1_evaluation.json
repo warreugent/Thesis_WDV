@@ -1,0 +1,51 @@
+{
+  "info": {
+    "timestamp": "2026-01-03 23:22:10",
+    "dataset_name": "apples",
+    "subset_name": "test",
+    "model_name": "rexomni_vllm_r1",
+    "iou_type": "bbox",
+    "num_initial_bbox": 0,
+    "machine_training_time_s": 0.0,
+    "total_inference_time_s": 9.996020117541775,
+    "num_predicted_bbox": 430,
+    "num_gt_bbox": 412,
+    "num_eval_images": 31,
+    "num_eval_categories": 2,
+    "preds_per_image_mean": 13.870967741935484,
+    "preds_per_image_ci_lower": 13.0,
+    "preds_per_image_ci_upper": 14.935483870967742
+  },
+  "coco_metrics": {
+    "AP@[.50:.95]": 0.5241082805217926,
+    "AP@0.50": 0.6229886648901272,
+    "AP@0.75": 0.6163226561688393,
+    "AP_small": -1.0,
+    "AP_medium": -1.0,
+    "AP_large": 0.5266758070112836,
+    "AR@1": 0.14302478469528632,
+    "AR@10": 0.6442870291236604,
+    "AR@100": 0.7099204523042535,
+    "AR_small": -1.0,
+    "AR_medium": -1.0,
+    "AR_large": 0.7099204523042535
+  },
+  "efficiency_metrics@iou_0.50": {
+    "bbox_additions": 34,
+    "bbox_removals": 52,
+    "precision": 0.8790697674418605,
+    "recall": 0.9174757281553398
+  },
+  "efficiency_metrics@iou_0.70": {
+    "bbox_additions": 36,
+    "bbox_removals": 54,
+    "precision": 0.8744186046511628,
+    "recall": 0.912621359223301
+  },
+  "efficiency_metrics@iou_0.90": {
+    "bbox_additions": 124,
+    "bbox_removals": 142,
+    "precision": 0.6697674418604651,
+    "recall": 0.6990291262135923
+  }
+}

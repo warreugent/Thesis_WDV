@@ -309,6 +309,7 @@ def train_yolo_model(
         data=str(data_yaml_path),
         epochs=100,
         patience=30,
+        lr0=0.001,
         imgsz=640,
         device="cuda",
         exist_ok=True,
