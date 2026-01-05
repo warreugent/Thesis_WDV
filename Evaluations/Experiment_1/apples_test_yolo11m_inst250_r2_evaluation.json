@@ -1,20 +1,25 @@
 {
   "info": {
-    "timestamp": "2026-01-03 23:22:12",
+    "timestamp": "2026-01-04 17:10:41",
     "dataset_name": "apples",
     "subset_name": "test",
     "model_name": "yolo11m_inst250_r2",
     "iou_type": "bbox",
     "num_initial_bbox": 252,
-    "machine_training_time_s": 64.52607575012371,
-    "total_inference_time_s": 2.9389235188718885,
-    "num_predicted_bbox": 466,
+    "machine_training_time_s": 64.26366955903359,
+    "inference_time_s": {
+      "total": 2.9327329790685326,
+      "image_mean": 0.09460428964737203,
+      "image_se": null
+    },
+    "num_predicted_bbox": {
+      "total": 466,
+      "image_mean": 15.03225806451613,
+      "image_se": 0.6500353521697206
+    },
     "num_gt_bbox": 412,
     "num_eval_images": 31,
-    "num_eval_categories": 2,
-    "preds_per_image_mean": 15.03225806451613,
-    "preds_per_image_ci_lower": 13.903225806451612,
-    "preds_per_image_ci_upper": 16.35483870967742
+    "num_eval_categories": 2
   },
   "coco_metrics": {
     "AP@[.50:.95]": 0.7814718165637874,

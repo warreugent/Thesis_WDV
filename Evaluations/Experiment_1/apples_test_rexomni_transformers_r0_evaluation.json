@@ -1,20 +1,25 @@
 {
   "info": {
-    "timestamp": "2026-01-03 23:22:09",
+    "timestamp": "2026-01-04 17:10:39",
     "dataset_name": "apples",
     "subset_name": "test",
     "model_name": "rexomni_transformers_r0",
     "iou_type": "bbox",
     "num_initial_bbox": 0,
     "machine_training_time_s": 0.0,
-    "total_inference_time_s": 49.00236608879641,
-    "num_predicted_bbox": 425,
+    "inference_time_s": {
+      "total": 49.00236608879641,
+      "image_mean": 1.580721486735368,
+      "image_se": 0.0557807477801025
+    },
+    "num_predicted_bbox": {
+      "total": 425,
+      "image_mean": 13.709677419354838,
+      "image_se": 0.40744034034443993
+    },
     "num_gt_bbox": 412,
     "num_eval_images": 31,
-    "num_eval_categories": 2,
-    "preds_per_image_mean": 13.709677419354838,
-    "preds_per_image_ci_lower": 13.0,
-    "preds_per_image_ci_upper": 14.549193548387086
+    "num_eval_categories": 2
   },
   "coco_metrics": {
     "AP@[.50:.95]": 0.504887587092757,

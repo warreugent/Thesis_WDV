@@ -1,20 +1,25 @@
 {
   "info": {
-    "timestamp": "2026-01-03 23:22:22",
+    "timestamp": "2026-01-04 17:10:49",
     "dataset_name": "tomatoes",
     "subset_name": "test",
     "model_name": "rexomni_vllm_r0",
     "iou_type": "bbox",
     "num_initial_bbox": 0,
     "machine_training_time_s": 0.0,
-    "total_inference_time_s": 696.9692250352819,
-    "num_predicted_bbox": 12761,
+    "inference_time_s": {
+      "total": 696.9692250352819,
+      "image_mean": 1.052823602772329,
+      "image_se": 0.16537461111873014
+    },
+    "num_predicted_bbox": {
+      "total": 12761,
+      "image_mean": 19.27643504531722,
+      "image_se": 2.488150091630175
+    },
     "num_gt_bbox": 4510,
     "num_eval_images": 662,
-    "num_eval_categories": 1,
-    "preds_per_image_mean": 19.27643504531722,
-    "preds_per_image_ci_lower": 14.552832326283987,
-    "preds_per_image_ci_upper": 24.398904833836855
+    "num_eval_categories": 1
   },
   "coco_metrics": {
     "AP@[.50:.95]": 0.16914707112075963,

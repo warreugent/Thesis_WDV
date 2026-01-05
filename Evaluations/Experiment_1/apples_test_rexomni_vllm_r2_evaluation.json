@@ -1,20 +1,25 @@
 {
   "info": {
-    "timestamp": "2026-01-03 23:22:10",
+    "timestamp": "2026-01-04 17:10:40",
     "dataset_name": "apples",
     "subset_name": "test",
     "model_name": "rexomni_vllm_r2",
     "iou_type": "bbox",
     "num_initial_bbox": 0,
     "machine_training_time_s": 0.0,
-    "total_inference_time_s": 10.014843482058495,
-    "num_predicted_bbox": 431,
+    "inference_time_s": {
+      "total": 10.014843482058495,
+      "image_mean": 0.3230594671631773,
+      "image_se": 0.024842239917939494
+    },
+    "num_predicted_bbox": {
+      "total": 431,
+      "image_mean": 13.903225806451612,
+      "image_se": 0.5045062287618671
+    },
     "num_gt_bbox": 412,
     "num_eval_images": 31,
-    "num_eval_categories": 2,
-    "preds_per_image_mean": 13.903225806451612,
-    "preds_per_image_ci_lower": 13.03225806451613,
-    "preds_per_image_ci_upper": 14.968548387096762
+    "num_eval_categories": 2
   },
   "coco_metrics": {
     "AP@[.50:.95]": 0.5200082911277958,
